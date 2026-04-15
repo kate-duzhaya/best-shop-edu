@@ -1,0 +1,42 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.product-card {
+  @include mixins.flex(flex-start, center, 0, column);
+  max-width: variables.$product-card-max-width;
+  position: relative;
+  text-wrap: balance;
+  // flex: 1;
+
+  &__sale {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background-color: variables.$primary-color;
+    padding: 0.6rem 1rem;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+
+    &-box {
+      margin-bottom: 2.4rem;
+      text-align: center;
+      box-shadow: variables.$primary-shadow;
+    }
+  }
+
+  &__name {
+    margin-bottom: 1.5rem;
+  }
+
+  &__price {
+    margin-top: auto;
+  }
+
+  &__btn {
+    margin-top: 1.6rem;
+  }
+}

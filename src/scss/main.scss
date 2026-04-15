@@ -1,0 +1,23 @@
+@use "abstracts/mixins";
+@use "abstracts/utilities";
+@use "abstracts/variables";
+
+@use "base/fonts";
+@use "base/reset";
+
+@use "components/banner";
+@use "components/benefits";
+@use "components/buttons";
+// @use "components/forms";
+@use "components/product-card";
+@use "components/slider";
+
+@use "layouts/footer";
+@use "layouts/header";
+@use "layouts/products-row";
+
+// @use "pages/about";
+// @use "pages/cart";
+// @use "pages/catalog";
+@use "pages/home";
+// @use "pages/product-details";

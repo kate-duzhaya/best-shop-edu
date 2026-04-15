@@ -1,0 +1,97 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.header {
+  padding-top: 4.8rem;
+  background-color: variables.$primary-white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__top-row {
+    @include mixins.flex(space-between, center, 2rem);
+
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(variables.$tertiary-grey, 0.2);
+    position: relative;
+  }
+
+  &__icons {
+    display: flex;
+
+    &--social {
+      gap: 2.5rem;
+    }
+
+    &--user {
+      gap: 1.5rem;
+    }
+  }
+
+  &__icon {
+    display: block;
+  }
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &--link {
+      @include mixins.flex(flex-start, center, 1.3rem);
+    }
+
+    &--box {
+      @include mixins.flex(center, center);
+      background-color: variables.$primary-color;
+      border-radius: 6px;
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
+    &--img {
+      display: block;
+    }
+  }
+
+  &__nav {
+    padding: 2.9rem 0 2.4rem 0;
+
+    &-list {
+      @include mixins.flex(center, center, 2.9rem);
+      list-style-type: none;
+    }
+
+    &-item {
+      display: inline-block;
+
+      &--has-dropdown {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+
+        &::after {
+          content: "";
+          width: 1rem;
+          height: 1rem;
+          border-right: 2px solid currentColor;
+          border-bottom: 2px solid currentColor;
+          transform: rotate(45deg) translateY(-3px);
+          transition: color 0.2s ease-in;
+        }
+      }
+
+      &:hover,
+      &:hover .header__nav-link:link,
+      &:hover .header__nav-link:visited {
+        color: variables.$primary-color;
+      }
+    }
+  }
+
+  &__nav-link:link,
+  &__nav-link:visited {
+    transition: color 0.2s ease-in;
+  }
+}

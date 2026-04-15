@@ -1,0 +1,86 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.footer {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "links contact"
+      "shipping contact";
+    gap: 5rem 20rem;
+    padding-top: variables.$big-distance;
+  }
+
+  &__link-groups {
+    @include mixins.flex(space-between, stretch, 2rem);
+    grid-area: links;
+  }
+
+  &__shipping {
+    grid-area: shipping;
+  }
+
+  &__contact {
+    grid-area: contact;
+  }
+
+  &__links {
+    list-style-type: none;
+
+    & > * {
+      display: block;
+
+      &:not(:last-child) {
+        padding-bottom: 1.2rem;
+      }
+    }
+  }
+
+  &__block {
+    @include mixins.flex(flex-start, flex-start, 2.4rem, column);
+  }
+
+  &__contact-block {
+    @include mixins.flex(flex-start, center, 1.4rem, row);
+
+    &::before {
+      content: "";
+      display: block;
+      max-width: 2.7rem;
+      aspect-ratio: 1;
+      flex: 0 0 2.7rem;
+      background-size: contain;
+    }
+
+    &--phone::before {
+      background: url("../img/icons/phone.svg") no-repeat center;
+    }
+
+    &--email::before {
+      background: url("../img/icons/email.svg") no-repeat center;
+    }
+
+    &--opening-hours::before {
+      background: url("../img/icons/clock.svg") no-repeat center;
+    }
+
+    &--address::before {
+      background: url("../img/icons/map-pin.svg") no-repeat center;
+    }
+  }
+
+  &__contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    margin-top: auto;
+  }
+
+  &__copyright {
+    display: block;
+    text-align: center;
+    margin-top: 11rem;
+    margin-bottom: 4.6rem;
+  }
+}

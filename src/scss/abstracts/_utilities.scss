@@ -1,0 +1,27 @@
+@use "../abstracts/variables";
+
+.content-container {
+  max-width: variables.$content-max-width;
+  margin: 0 auto;
+}
+
+.u-default-padding {
+  padding-left: variables.$padding-default-width;
+  padding-right: variables.$padding-default-width;
+}
+
+.u-padding-bottom-big {
+  padding-bottom: variables.$big-distance;
+}
+
+.u-padding-bottom-medium {
+  padding-bottom: 6rem;
+}
+
+.u-padding-bottom-small {
+  padding-bottom: 1rem;
+}
+
+.u-center-text {
+  text-align: center;
+}

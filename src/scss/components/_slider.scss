@@ -1,0 +1,96 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.slider {
+  &__wrapper {
+    position: relative;
+  }
+
+  &__gallery {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__card-list {
+    flex: none;
+    @include mixins.flex(flex-start, center, 3.9rem, row);
+    padding-bottom: variables.$big-distance;
+  }
+
+  &__card-item {
+    transition: transform 0.2s ease-in;
+    scroll-snap-align: start;
+    position: relative;
+    text-align: left;
+    flex: 0 1 29.6rem;
+    // display: inline;
+
+    &::before {
+      content: "";
+      inset: 0;
+      position: absolute;
+      background-color: variables.$overlay;
+    }
+
+    &:hover {
+      @include mixins.scale-card();
+    }
+  }
+
+  &__card-text {
+    @include mixins.flex(flex-end, flex-start, 2rem, column);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 4rem;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+  }
+
+  &__btn {
+    padding: 2.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 7.7rem);
+    // transform: translateY(-50%);
+    z-index: 1;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.9;
+    backdrop-filter: blur(1rem);
+
+    &--back {
+      left: 0;
+      transform: translateX(-50%);
+      background-color: variables.$primary-color;
+    }
+
+    &--frwd {
+      right: 0;
+      transform: translateX(50%);
+      background-color: variables.$primary-color;
+    }
+
+    &--disabled {
+      opacity: 0.3;
+      cursor: auto;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .slider {
+    &__card-item {
+      flex: 0 0 100%;
+    }
+  }
+}

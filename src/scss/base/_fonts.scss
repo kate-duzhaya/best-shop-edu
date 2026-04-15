@@ -1,0 +1,182 @@
+@use "../abstracts/variables";
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: variables.$default-font-size;
+  font-weight: 400;
+  color: variables.$primary-black;
+}
+
+.header {
+  &__logo--text {
+    text-transform: uppercase;
+    color: variables.$primary-color;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  &__nav-link {
+    &:link,
+    &:visited {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: variables.$primary-black;
+      text-transform: capitalize;
+    }
+
+    &--active:link,
+    &--active:visited {
+      color: variables.$primary-color;
+    }
+  }
+}
+
+.heading-primary {
+  font-weight: 900;
+  font-size: variables.$heading-primary-font-size;
+  color: variables.$primary-black;
+}
+
+.paragraph {
+  line-height: 2.5rem;
+
+  &--grey {
+    color: variables.$primary-grey;
+  }
+
+  &--white {
+    color: variables.$primary-white;
+  }
+
+  &--black {
+    color: variables.$primary-black;
+  }
+}
+
+.btn {
+  text-transform: capitalize;
+  font-family: inherit;
+  cursor: pointer;
+
+  &--primary {
+    color: variables.$primary-white;
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    &--narrow {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.intro__chief {
+  &-name {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 7px;
+  }
+}
+
+.heading-secondary {
+  font-size: variables.$heading-secondary-font-size;
+  font-weight: 900;
+
+  &--black {
+    color: variables.$primary-black;
+  }
+
+  &--white {
+    color: variables.$primary-white;
+  }
+}
+
+.heading-tertiary {
+  font-size: variables.$heading-tertiary-font-size;
+  font-weight: 700;
+
+  &--black {
+    color: variables.$primary-black;
+  }
+
+  &--white {
+    color: variables.$primary-white;
+  }
+}
+
+.product-card {
+  &__sale {
+    color: variables.$primary-white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  &__price {
+    font-size: variables.$heading-tertiary-font-size;
+    font-weight: 700;
+    color: variables.$primary-grey;
+  }
+}
+
+.banner {
+  color: variables.$primary-white;
+
+  &__discount {
+    &-value {
+      font-size: 22rem;
+      font-weight: 900;
+      line-height: 22rem;
+    }
+    &-description {
+      font-size: 2rem;
+    }
+  }
+}
+
+.testimonial {
+  &__name {
+    font-weight: 700;
+    color: variables.$primary-color;
+  }
+}
+
+.benefits {
+  &__card {
+    color: variables.$primary-white;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.heading-h4 {
+  font-size: variables.$heading-h4;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.footer {
+  &__link,
+  &__paragraph {
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: 2.2rem;
+  }
+
+  &__copyright {
+    color: variables.$tertiary-grey;
+    font-size: 1.4rem;
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: variables.$primary-black;
+  }
+}
+
+.slider {
+  &__paragraph {
+    color: variables.$primary-white;
+    font-size: 1.9rem;
+    line-height: 2.8rem;
+  }
+}

@@ -1,0 +1,51 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.benefits {
+  background:
+    url("../img/decorative/benefits-lines-bg.png"),
+    variables.$primary-grey no-repeat;
+  background-size: cover;
+  background-position: top;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  &__list {
+    list-style-type: none;
+    @include mixins.flex(center, center, 8rem);
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    margin-top: 3.2rem;
+  }
+
+  &__card {
+    display: block;
+    flex: 1 0 26.5rem;
+    @include mixins.flex(flex-start, center, 8px);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      max-width: 6rem;
+      aspect-ratio: 1;
+      background-size: contain;
+    }
+
+    &--1::before {
+      background: url("../img/decorative/benefit1.png");
+    }
+
+    &--2::before {
+      background: url("../img/decorative/benefit2.png");
+    }
+
+    &--3::before {
+      background: url("../img/decorative/benefit3.png");
+    }
+
+    &--4::before {
+      background: url("../img/decorative/benefit4.png");
+    }
+  }
+}

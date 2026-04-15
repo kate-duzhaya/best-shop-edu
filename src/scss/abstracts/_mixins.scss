@@ -1,0 +1,17 @@
+@use "./variables";
+
+@mixin flex($justify: flex-start, $align: center, $gap: 0, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+@mixin scale-card() {
+  transform: scale(1.1);
+  box-shadow: variables.$slider-shadow;
+}

@@ -1,0 +1,8 @@
+@use "../abstracts/mixins";
+
+.products-row {
+  &__products {
+    @include mixins.flex(center, stretch, 3.8rem, row);
+    flex-wrap: wrap;
+  }
+}

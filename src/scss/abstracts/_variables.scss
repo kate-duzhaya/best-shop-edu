@@ -1,0 +1,25 @@
+// COLORS
+$primary-color: #b92770;
+$primary-black: #000;
+$primary-white: #fff;
+$primary-grey: #504e4a;
+$tertiary-grey: #727174;
+$bg-grey: #e7e8e9;
+$overlay: rgba($primary-black, 0.4);
+
+// FONT SIZES
+$default-font-size: 1.7rem;
+$heading-primary-font-size: 5rem;
+$heading-secondary-font-size: 4rem;
+$heading-tertiary-font-size: 1.9rem;
+$heading-h4: 1.5rem;
+
+// WIDTHS
+$content-max-width: 130rem;
+$padding-default-width: 2.5rem;
+$product-card-max-width: 29.6rem;
+$big-distance: 12rem;
+
+$grid-2-columns: repeat(auto-fit, minmax(30rem, 1fr));
+$primary-shadow: 0 2rem 8rem rgba(#c1c7d4, 0.7);
+$slider-shadow: 0 2rem 3rem rgba($primary-grey, 0.4);

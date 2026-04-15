@@ -1,0 +1,24 @@
+@use "../abstracts/variables";
+
+.btn {
+  &--primary {
+    background-color: variables.$primary-color;
+    padding: 1.9rem;
+    border: none;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      background-color: lighten($color: variables.$primary-color, $amount: 7);
+      box-shadow: 0 1rem 2rem rgba(variables.$primary-grey, 0.3);
+      transform: translateY(-2px);
+    }
+
+    &--narrow {
+      padding: 1rem 2.7rem;
+    }
+
+    &--offer {
+      padding: 1.9rem 2.5rem;
+    }
+  }
+}
