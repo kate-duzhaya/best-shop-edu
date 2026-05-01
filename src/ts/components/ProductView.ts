@@ -68,12 +68,8 @@ export class ProductView {
   }
 
   private renderTabs() {
-    const tabs = document.querySelectorAll(
-      ".btn--tab",
-    ) as NodeListOf<HTMLButtonElement>;
-    const contentDivs = document.querySelectorAll(
-      ".tabs__content",
-    ) as NodeListOf<HTMLDivElement>;
+    const tabs = document.querySelectorAll(".btn--tab");
+    const contentDivs = document.querySelectorAll(".tabs__content");
 
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
@@ -82,7 +78,10 @@ export class ProductView {
         });
         contentDivs.forEach((div) => {
           div.classList.add("u-hidden");
-          if (div.dataset.content === tab.dataset.tab) {
+          if (
+            (div as HTMLDivElement).dataset.content ===
+            (tab as HTMLButtonElement).dataset.tab
+          ) {
             div.classList.remove("u-hidden");
             tab.classList.add("btn--active-tab");
           }
