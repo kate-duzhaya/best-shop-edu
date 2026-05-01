@@ -4,7 +4,6 @@ import { SHIPPING_PRICE } from "../config";
 
 const renderCartProduct = (product: ProductToCart): HTMLDivElement => {
   const cartRow: HTMLDivElement = document.createElement("div");
-  cartRow.setAttribute("role", "row");
   cartRow.classList.add("cart__row");
 
   const imgCell: HTMLDivElement = document.createElement("div");
@@ -88,7 +87,6 @@ const renderCartProduct = (product: ProductToCart): HTMLDivElement => {
     btnCell,
   ]) {
     cell.classList.add("cart__cell");
-    cell.role = "cell";
   }
 
   cartRow.append(imgCell, cellGroup, totalCell, btnCell);

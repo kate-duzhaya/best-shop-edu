@@ -31,7 +31,7 @@ const renderCatalogProducts = (): void => {
     currentSearchQuery,
   );
 
-  new CatalogPages();
+  new CatalogPages().render();
 
   const productsToDisplay: Product[] =
     productService.getResultsPerPage(currrentPage);
@@ -54,9 +54,9 @@ const renderCatalogProducts = (): void => {
 
 export const initCatalog = () => {
   const products = new ProductService();
-  new Filters();
-  new Sorting();
-  new Search();
+  new Filters().attachEventListeners();
+  new Sorting().attachEventListener();
+  new Search().attachEventListener();
 
   renderCatalogProducts();
   state.subscribe(renderCatalogProducts);

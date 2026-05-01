@@ -29,36 +29,6 @@ export interface ProductToCart {
 
 export type SectionType = "selected" | "new" | "youMaylike" | "bestSets";
 
-// export const searchKey: Record<SectionType, string> = {
-//   selected: "Selected Products",
-//   new: "New Products Arrival",
-//   youMaylike: "You May Also Like",
-//   bestSets: "luggage sets",
-// };
-
-// export type FilterType = "size" | "color" | "category" | "sale";
-
-// type SizeType = "S" | "M" | "L" | "XL" | "S-L" | "S, M, XL";
-
-// type CategoryType =
-//   | "carry-ons"
-//   | "suitcases"
-//   | "luggage sets"
-//   | "kids' luggage";
-
-// type ColorType =
-//   | "red"
-//   | "blue"
-//   | "green"
-//   | "black"
-//   | "grey"
-//   | "yellow"
-//   | "pink"
-//   | "beige"
-//   | "orange"
-//   | "brown"
-//   | "white";
-
 export interface ActiveFilters {
   size?: string[] | null;
   color?: string | null;

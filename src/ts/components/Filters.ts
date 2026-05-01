@@ -7,19 +7,17 @@ const customSizes: Partial<Record<string, NonNullable<ActiveFilters["size"]>>> =
   };
 
 export class Filters {
-  private _formElement: HTMLFormElement;
-  private _sizeFilter: HTMLSelectElement;
-  private _colorFilter: HTMLSelectElement;
-  private _categoryFilter: HTMLSelectElement;
-  private _isOnSaleFilter: HTMLInputElement;
-  private _formFields: (HTMLSelectElement | HTMLInputElement)[];
+  private readonly _formElement: HTMLFormElement;
+  private readonly _sizeFilter: HTMLSelectElement;
+  private readonly _colorFilter: HTMLSelectElement;
+  private readonly _categoryFilter: HTMLSelectElement;
+  private readonly _isOnSaleFilter: HTMLInputElement;
+  private readonly _formFields: (HTMLSelectElement | HTMLInputElement)[];
 
   constructor() {
     this._formElement = document.getElementById(
       "filterProductsForm",
     ) as HTMLFormElement;
-    this.displayFilters();
-
     this._sizeFilter = document.getElementById(
       "filterSizeField",
     ) as HTMLSelectElement;
@@ -38,6 +36,30 @@ export class Filters {
       this._categoryFilter,
       this._isOnSaleFilter,
     ];
+  }
+
+  attachEventListeners() {
+    const openFiltersBtn: HTMLButtonElement = document.querySelector(
+      ".catalog-header__filter",
+    ) as HTMLButtonElement;
+
+    openFiltersBtn.addEventListener("mouseover", () => {
+      this._formElement.classList.toggle("is-open");
+
+      if (this._formElement.classList.contains("is-open")) {
+        const hideFiltersBtn: HTMLButtonElement = document.getElementById(
+          "hideFiltersButton",
+        ) as HTMLButtonElement;
+        hideFiltersBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.closeFilters();
+        });
+        this._formElement.addEventListener("mouseleave", () => {
+          this.closeFilters();
+        });
+      }
+    });
+
     const resetFiltersBtn = document.getElementById(
       "clearFiltersBtn",
     ) as HTMLButtonElement;
@@ -75,29 +97,6 @@ export class Filters {
     resetFiltersBtn.addEventListener("click", () => {
       state.resetFilters();
       this.highlightSelectedFilters();
-    });
-  }
-
-  private displayFilters() {
-    const openFiltersBtn: HTMLButtonElement = document.querySelector(
-      ".catalog-header__filter",
-    ) as HTMLButtonElement;
-
-    openFiltersBtn.addEventListener("mouseover", () => {
-      this._formElement.classList.toggle("is-open");
-
-      if (this._formElement.classList.contains("is-open")) {
-        const hideFiltersBtn: HTMLButtonElement = document.getElementById(
-          "hideFiltersButton",
-        ) as HTMLButtonElement;
-        hideFiltersBtn.addEventListener("click", (e) => {
-          e.preventDefault();
-          this.closeFilters();
-        });
-        this._formElement.addEventListener("mouseleave", () => {
-          this.closeFilters();
-        });
-      }
     });
   }
 

@@ -5,7 +5,7 @@ type CartListener = (cart: ProductToCart[]) => void;
 
 class ShoppingCart {
   storageKey: string;
-  private _listeners: CartListener[] = [];
+  private readonly _listeners: CartListener[] = [];
 
   constructor(storageKey: string) {
     this.storageKey = storageKey;

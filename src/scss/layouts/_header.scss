@@ -77,16 +77,6 @@
         align-items: center;
         gap: 4px;
         cursor: pointer;
-
-        // &::after {
-        //   content: "";
-        //   width: 1rem;
-        //   height: 1rem;
-        //   border-right: 2px solid currentColor;
-        //   border-bottom: 2px solid currentColor;
-        //   transform: rotate(45deg) translateY(-3px);
-        //   transition: color 0.2s ease-in;
-        // }
       }
 
       &:hover,

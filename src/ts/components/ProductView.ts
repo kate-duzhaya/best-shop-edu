@@ -7,10 +7,10 @@ import { shoppingCart } from "../ShoppingCart";
 const inputValidation = new InputValidation();
 
 export class ProductView {
-  private _product: Product;
-  private _sizes: string[] | undefined;
-  private _colors: string[] | undefined;
-  private _relatedProducts: Product[];
+  private readonly _product: Product;
+  private readonly _sizes: string[] | undefined;
+  private readonly _colors: string[] | undefined;
+  private readonly _relatedProducts: Product[];
 
   constructor(
     product: Product,

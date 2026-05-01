@@ -5,17 +5,16 @@ import { Modal } from "./Modal";
 const inputValidation = new InputValidation();
 
 export class LoginController {
-  private _loginModal: Modal;
+  private readonly _loginModal: Modal;
   private _emailField: HTMLInputElement | null = null;
   private _passField: HTMLInputElement | null = null;
   private _authErrorDiv: HTMLDivElement | null = null;
 
   constructor() {
     this._loginModal = new Modal("/html/modalLogin.html");
-    this.init();
   }
 
-  private init(): void {
+  render() {
     const openModalBtn = document.getElementById("openLoginModal");
 
     if (openModalBtn) {

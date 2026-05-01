@@ -14,7 +14,7 @@ import { initContactPage } from "./contact.js";
 window.addEventListener("DOMContentLoaded", () => {
   highlightActiveLink();
   displayHamburgerMenu();
-  new LoginController();
+  new LoginController().render();
   shoppingCart.subscribe(() => {
     showCartIconCounter(shoppingCart.getTotalItemsCount());
   });

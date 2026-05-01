@@ -30,7 +30,6 @@
   &__card {
     display: block;
 
-    // flex: 1 0 26.5rem;
     @include mixins.flex(flex-start, center, 8px);
 
     @media screen and (width <= 1024px) {

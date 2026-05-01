@@ -2,17 +2,16 @@ import { state } from "../state";
 import { RESULTS_PER_PAGE } from "../config";
 
 export class CatalogPages {
-  private _paginationEl: HTMLDivElement;
+  private readonly _paginationEl: HTMLDivElement;
   private _pagesArray: number[] = [];
 
   constructor() {
     this._paginationEl = document.querySelector(
       ".catalog-grid__pages-wrapper",
     ) as HTMLDivElement;
-    this.init();
   }
 
-  private init() {
+  render() {
     this.showPages();
     this.showNextBtn();
     this.showPreviousBtn();
@@ -29,7 +28,7 @@ export class CatalogPages {
     this._paginationEl.innerHTML = "";
     this._paginationEl.classList.remove("u-hidden");
 
-    const pagesDiv = document.createElement("div") as HTMLDivElement;
+    const pagesDiv = document.createElement("div");
     pagesDiv.classList.add("catalog-grid__pages");
 
     for (const page of this._pagesArray.values()) {
@@ -54,7 +53,7 @@ export class CatalogPages {
   }
 
   private showNextBtn(): HTMLButtonElement {
-    const nextBtn = document.createElement("button") as HTMLButtonElement;
+    const nextBtn = document.createElement("button");
     if (
       this._pagesArray.length > 1 &&
       state.currentPage !== this._pagesArray[this._pagesArray.length - 1]
@@ -72,7 +71,7 @@ export class CatalogPages {
   }
 
   private showPreviousBtn(): HTMLButtonElement {
-    const previousBtn = document.createElement("button") as HTMLButtonElement;
+    const previousBtn = document.createElement("button");
     if (this._pagesArray.length > 1 && state.currentPage !== 1) {
       previousBtn.classList.add(
         "catalog-grid__previous",

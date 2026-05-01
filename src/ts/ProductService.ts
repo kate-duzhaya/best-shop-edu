@@ -4,7 +4,7 @@ import { SECTION_PRODUCTS, RANDOM_SETS, RESULTS_PER_PAGE } from "./config";
 import { state } from "./state";
 
 export class ProductService {
-  private _productList: productTypes.Product[];
+  private readonly _productList: productTypes.Product[];
   private _catalogProducts: productTypes.Product[] = [];
 
   constructor() {
@@ -182,7 +182,7 @@ export class ProductService {
     productGroup.forEach((obj) => {
       colors.add(obj.color);
     });
-    return [...colors].sort();
+    return [...colors];
   }
 
   getNewSizeColorComboProductId(
@@ -204,9 +204,7 @@ export class ProductService {
           matchedProduct = products.find((product) => product.color === color);
           break;
         default:
-          matchedProduct = products.find(
-            (product) => product.isDefault == true,
-          );
+          matchedProduct = products.find((product) => product.isDefault);
       }
     }
     return (matchedProduct as productTypes.Product).id;

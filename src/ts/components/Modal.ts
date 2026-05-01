@@ -1,6 +1,6 @@
 export class Modal {
-  private _modalMarkupPath: string;
-  private _openBtnId?: string;
+  private readonly _modalMarkupPath: string;
+  private readonly _openBtnId?: string;
   private _activeDialog: HTMLDialogElement | null = null;
 
   constructor(modalMarkupPath: string, openBtnId?: string) {
