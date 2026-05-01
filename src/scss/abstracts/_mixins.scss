@@ -12,6 +12,88 @@
 }
 
 @mixin scale-card() {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: variables.$slider-shadow;
+}
+
+@mixin add-overlay() {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: variables.$overlay;
+}
+
+@mixin add-image-pseudo-element($url) {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  max-width: 6rem;
+  aspect-ratio: 1;
+  background-image: url($url);
+  background-size: cover;
+}
+
+@mixin responsive-image() {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@mixin underline() {
+  text-decoration-line: underline;
+  text-decoration-color: variables.$primary-color;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 9px;
+}
+
+@mixin hover-card-effect() {
+  cursor: pointer;
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+@mixin dropdown-effect() {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@mixin draw-arrow-pseudo-element($side) {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+
+  @if $side == "left" {
+    margin-right: 10px;
+  }
+
+  @if $side == "right" {
+    margin-left: 10px;
+  }
+}
+
+@mixin button-hover-effect() {
+  &:hover {
+    background-color: variables.$primary-color-hover;
+    box-shadow: 0 1rem 2rem rgba(variables.$primary-grey, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background-color: variables.$primary-color-clicked;
+    box-shadow: 0 0.5rem 0.5rem rgba(variables.$primary-grey, 0.5);
+    transform: translateY(0);
+  }
 }

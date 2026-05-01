@@ -8,13 +8,29 @@
     grid-template-areas:
       "links contact"
       "shipping contact";
-    gap: 5rem 20rem;
+    gap: 5rem 18rem;
     padding-top: variables.$big-distance;
+
+    @media screen and (width <= 1024px) {
+      gap: 5rem;
+    }
+
+    @media screen and (width <= 768px) {
+      display: flex;
+      flex-direction: column;
+      padding-top: 6rem;
+    }
   }
 
   &__link-groups {
     @include mixins.flex(space-between, stretch, 2rem);
+
     grid-area: links;
+
+    @media screen and (width <= 768px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
   }
 
   &__shipping {
@@ -54,19 +70,19 @@
     }
 
     &--phone::before {
-      background: url("../img/icons/phone.svg") no-repeat center;
+      background: url("../../assets/img/icons/phone.svg") no-repeat center;
     }
 
     &--email::before {
-      background: url("../img/icons/email.svg") no-repeat center;
+      background: url("../../assets/img/icons/email.svg") no-repeat center;
     }
 
     &--opening-hours::before {
-      background: url("../img/icons/clock.svg") no-repeat center;
+      background: url("../../assets/img/icons/clock.svg") no-repeat center;
     }
 
     &--address::before {
-      background: url("../img/icons/map-pin.svg") no-repeat center;
+      background: url("../../assets/img/icons/map-pin.svg") no-repeat center;
     }
   }
 
@@ -75,6 +91,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2.4rem;
     margin-top: auto;
+    width: 100%;
+
+    @media screen and (width <= 1024px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__copyright {
@@ -82,5 +103,10 @@
     text-align: center;
     margin-top: 11rem;
     margin-bottom: 4.6rem;
+
+    @media screen and (width <= 768px) {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
   }
 }

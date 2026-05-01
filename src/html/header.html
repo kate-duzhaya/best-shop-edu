@@ -1,36 +1,37 @@
 <header class="header u-default-padding">
-  <div class="content-container">
+  <div class="content-container header__container">
     <div class="header__top-row">
-      <div class="header__icons header__icons--social">
-        <a href="#">
+      <div class="header__icons header__icons--social desktop">
+        <a href="https://www.facebook.com/">
           <img
             class="header__icon header__icon--facebook"
-            src="../dist/img/icons/facebook.svg"
+            src="../assets/img/icons/facebook.svg"
             alt="Facebook"
           />
         </a>
 
-        <a href="#">
+        <a href="https://x.com/">
           <img
             class="header__icon header__icon--twitter"
-            src="../dist/img/icons/twitter.svg"
+            src="../assets/img/icons/twitter.svg"
             alt="Twitter"
           />
         </a>
 
-        <a href="#">
+        <a href="https://instagram.com/">
           <img
             class="header__icon header__icon--instagram"
-            src="../dist/img/icons/instagram.svg"
+            src="../assets/img/icons/instagram.svg"
             alt="Instagram"
           />
         </a>
       </div>
+
       <div class="header__logo">
-        <a href="#" class="header__logo--link">
+        <a href="/index.html" class="header__logo--link">
           <div class="header__logo--box">
             <img
-              src="../dist/img/icons/logo.svg"
+              src="../assets/img/icons/logo.svg"
               alt="Logo"
               class="header__logo--img"
             />
@@ -38,39 +39,84 @@
           <div class="header__logo--text">Best shop</div>
         </a>
       </div>
+
       <div class="header__icons header__icons--user">
-        <a href="#">
+        <button class="btn" aria-label="Open Login window">
           <img
-            src="../dist/img/icons/user.svg"
+            src="../assets/img/icons/user.svg"
             alt="Profile"
             class="header__icon header__icon--profile"
+            id="openLoginModal"
+          />
+        </button>
+
+        <a
+          class="btn cart__icon"
+          href="/html/cart.html"
+          aria-label="Open shopping cart"
+        >
+          <img
+            src="../assets/img/icons/shopping-cart.svg"
+            alt="Shopping cart"
+            class="header__icon header__icon--cart"
+          />
+          <div class="cart__count u-hidden"></div>
+        </a>
+
+        <button
+          class="btn header__hamburger"
+          id="hamburgerBtn"
+          aria-label="Open menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <div class="header__bottom-row" id="mobileMenu">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="header__nav-item header__nav-item--has-dropdown">
+            <a class="header__nav-link" href="/html/catalog.html">Catalog </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="/html/about.html">About Us</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="/html/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__icons header__icons--social mobile">
+        <a href="https://www.facebook.com/">
+          <img
+            class="header__icon header__icon--facebook"
+            src="../assets/img/icons/facebook.svg"
+            alt="Facebook"
           />
         </a>
 
-        <a href="#">
+        <a href="https://x.com/">
           <img
-            src="../dist/img/icons/shopping-cart.svg"
-            alt="Shopping cart"
-            class="header__icon header__icon--cart"
+            class="header__icon header__icon--twitter"
+            src="../assets/img/icons/twitter.svg"
+            alt="Twitter"
+          />
+        </a>
+
+        <a href="https://instagram.com/">
+          <img
+            class="header__icon header__icon--instagram"
+            src="../assets/img/icons/instagram.svg"
+            alt="Instagram"
           />
         </a>
       </div>
     </div>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <a class="header__nav-link header__nav-link--active" href="#">Home</a>
-        </li>
-        <li class="header__nav-item header__nav-item--has-dropdown">
-          <a class="header__nav-link" href="html/catalog.html">Catalog </a>
-        </li>
-        <li class="header__nav-item">
-          <a class="header__nav-link" href="html/about.html">About Us</a>
-        </li>
-        <li class="header__nav-item">
-          <a class="header__nav-link" href="html/contact.html">Contact Us</a>
-        </li>
-      </ul>
-    </nav>
   </div>
 </header>

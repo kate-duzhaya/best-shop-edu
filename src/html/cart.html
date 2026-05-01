@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="../scss/main.scss" />
+    <link rel="icon" type="image/png" href="../assets/img/icons/favicon.png" />
+    <script type="module" src="../ts/main.ts" defer></script>
+
+    <title>My Cart - Best Shop</title>
+  </head>
+  <body data-page="about">
+    <load ="./header.html" />
+    <main>
+      <header class="header-banner header-banner--cart u-margin-bottom-medium">
+        <div class="header-banner__text">
+          <h1 class="header-banner__heading header-banner__heading--cart">
+            My Cart
+          </h1>
+        </div>
+      </header>
+      <section class="cart u-default-padding u-padding-bottom-big">
+        <div class="cart__container content-container">
+          <div class="empty-cart">
+            <img src="../assets/img/icons/empty-cart.svg" alt="Empty cart" />
+            <h3 class="heading-tertiary">Your cart is empty</h3>
+            <p>Use the catalog to add new items</p>
+            <a href="./catalog.html" class="btn btn--primary btn--primary--cart"
+              >Open catalog</a
+            >
+          </div>
+          <div
+            class="cart__table u-margin-bottom-medium u-hidden"
+            role="table"
+            aria-label="Shopping cart"
+          >
+            <div class="cart__header" role="row">
+              <div class="cart__col-name" role="columnheader">Image</div>
+              <div class="cart__col-name" role="columnheader">Product Name</div>
+              <div class="cart__col-name" role="columnheader">Price</div>
+              <div class="cart__col-name" role="columnheader">Quantity</div>
+              <div class="cart__col-name" role="columnheader">Total</div>
+              <div class="cart__col-name" role="columnheader">Delete</div>
+            </div>
+            <div class="cart__products"></div>
+          </div>
+          <div class="cart__control u-hidden">
+            <div class="cart__buttons">
+              <a
+                href="./catalog.html"
+                class="btn btn--primary btn--primary--cart"
+                id="continueShoppingBtn"
+              >
+                Continue Shopping
+              </a>
+              <button
+                class="btn btn--primary btn--primary--cart"
+                type="button"
+                id="clearCartBtn"
+              >
+                Clear shopping cart
+              </button>
+            </div>
+            <div class="cart__summary">
+              <div class="cart__totals">
+                <div class="cart__total">
+                  <h4>Sub Total</h4>
+                  <p id="subTotal"></p>
+                </div>
+                <div class="cart__total cart__discount">
+                  <h4>Discount</h4>
+                  <p id="discount"></p>
+                </div>
+                <div class="cart__total">
+                  <h4>Shipping</h4>
+                  <p id="shippingPrice"></p>
+                </div>
+                <div class="cart__total cart__total--main">
+                  <h3>Total</h3>
+                  <p id="total"></p>
+                </div>
+              </div>
+              <button
+                class="btn btn--primary btn--primary--cart"
+                type="button"
+                id="checkoutBtn"
+              >
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <load ="./benefits.html" />
+    </main>
+    <load ="./footer.html" />
+  </body>
+</html>

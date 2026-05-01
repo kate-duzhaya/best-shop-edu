@@ -1,0 +1,38 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.rating-container {
+  @include mixins.flex(flex-start, center, 4px);
+
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.star {
+  color: variables.$star-color;
+  transition: all 0.2s ease-in-out;
+  font-family:
+    "Varela Round", "Arial Rounded MT Bold", Nunito, "Segoe UI Rounded",
+    system-ui, serif;
+
+  //   text-shadow: 0px 0px 1px variables.$star-color;
+}
+
+.static-stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+
+  display: inline-block;
+  font-size: 2rem;
+  font-family:
+    "Varela Round", "Arial Rounded MT Bold", Nunito, "Segoe UI Rounded",
+    system-ui, serif;
+  letter-spacing: 2px;
+  background: linear-gradient(
+    to right,
+    variables.$star-color var(--percent),
+    variables.$field-border-grey var(--percent)
+  );
+  background-clip: text;
+  color: transparent;
+}

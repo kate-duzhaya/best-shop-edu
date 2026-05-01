@@ -1,0 +1,24 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.small-card {
+  @include mixins.flex(flex-start, center, 2.2rem, column);
+
+  text-align: center;
+  text-wrap: balance;
+  flex: 1;
+
+  &__img-wrapper {
+    background-color: variables.$primary-color;
+    padding: 8px;
+    width: 6.2rem;
+  }
+
+  &__icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

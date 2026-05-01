@@ -1,24 +1,154 @@
+@use "sass:color";
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+a.btn--primary {
+  display: inline-block;
+
+  @include mixins.button-hover-effect;
+}
 
 .btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: all 0.2s ease-out;
+
   &--primary {
     background-color: variables.$primary-color;
     padding: 1.9rem;
-    border: none;
-    transition: all 0.2s ease-out;
 
-    &:hover {
-      background-color: lighten($color: variables.$primary-color, $amount: 7);
-      box-shadow: 0 1rem 2rem rgba(variables.$primary-grey, 0.3);
-      transform: translateY(-2px);
+    &:enabled {
+      @include mixins.button-hover-effect;
+    }
+
+    &:disabled {
+      color: variables.$primary-color;
+      font-size: variables.$default-font-size;
+      background-color: rgba(variables.$primary-color, 0.2);
+      border: none;
     }
 
     &--narrow {
       padding: 1rem 2.7rem;
     }
 
-    &--offer {
+    &--offer,
+    &--cart {
       padding: 1.9rem 2.5rem;
     }
+
+    &--wider {
+      padding: 1.9rem 3rem;
+    }
+
+    &--filter {
+      padding: 1.7rem 5rem;
+    }
   }
+
+  &--secondary {
+    border: 2px solid variables.$primary-color;
+    border-radius: 6px;
+    padding: 1.2rem 2rem;
+    background-color: variables.$primary-white;
+    display: inline-flex;
+
+    &.catalog-grid__next::after {
+      @include mixins.draw-arrow-pseudo-element("right");
+
+      transform: rotate(-45deg) translateY(4px);
+    }
+
+    &.catalog-grid__previous::before {
+      @include mixins.draw-arrow-pseudo-element("left");
+
+      transform: rotate(135deg) translateY(-4px);
+    }
+
+    &:hover {
+      background-color: variables.$primary-color-hover;
+      color: variables.$primary-white;
+    }
+
+    &:active {
+      background-color: variables.$primary-color-clicked;
+    }
+  }
+
+  &--page {
+    padding: 1.1rem 1.6rem;
+  }
+
+  &--page.current-page {
+    background-color: variables.$primary-color;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: variables.$primary-color-hover;
+    }
+
+    &:active {
+      background-color: variables.$primary-color-clicked;
+    }
+  }
+
+  &--tab {
+    background-color: variables.$primary-white;
+    padding: 9px;
+
+    &:hover {
+      @include mixins.underline;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--active-tab {
+    @include mixins.underline;
+  }
+
+  &--forgot-pswrd {
+    background-color: transparent;
+  }
+}
+
+.product-info {
+  &__form-buttons {
+    & > .btn {
+      width: 100%;
+      padding: 1.7rem;
+    }
+  }
+}
+
+@media screen and (width <= 768px) {
+  .btn {
+    &--primary {
+      padding: 1.5rem 2rem;
+
+      &--cart {
+        flex: 1;
+      }
+    }
+  }
+
+  #submitContactFormBtn {
+    width: 100%;
+  }
+}
+
+@media screen and (width <= 480px) {
+  .btn {
+    &--primary {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+#continueShoppingBtn {
+  text-align: center;
 }

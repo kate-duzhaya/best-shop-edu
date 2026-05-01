@@ -1,0 +1,134 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.form {
+  &__group {
+    @include mixins.flex(stretch, flex-start, 1.3rem, column);
+
+    &--login,
+    &--contact {
+      gap: 0;
+    }
+
+    & > label {
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+.product-info {
+  &__selection {
+    width: 100%;
+  }
+
+  &__selection-fields {
+    & > * {
+      margin-bottom: 2.9rem;
+    }
+  }
+
+  &__form-buttons {
+    @include mixins.flex(flex-start, stretch, 1.2rem);
+
+    margin-top: 4rem;
+
+    @media screen and (width <= 480px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.quantity__container {
+  min-width: 12.8rem;
+  width: 30%;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  @media screen and (width <= 480px) {
+    width: 100%;
+  }
+}
+
+.reviews {
+  &__form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+
+    @media screen and (width <= 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__input {
+    &--review {
+      grid-column: 1 / -1;
+      height: 100%;
+
+      & > *:first-child {
+        height: 16.8rem;
+      }
+    }
+  }
+}
+
+.contact-form {
+  @include mixins.flex(space-between, flex-start, 1rem, column);
+
+  &__fields {
+    width: 100%;
+
+    & > *:not(:last-child) {
+      padding-bottom: 3rem;
+
+      @media screen and (width <= 768px) {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.filters {
+  padding: 3.5rem;
+  z-index: 2;
+  background-color: variables.$primary-white;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+
+  @include mixins.dropdown-effect;
+
+  &__fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2.6rem;
+    padding: 2.2rem 0 3.5rem;
+    border-bottom: 2px solid variables.$primary-color;
+    border-top: 2px solid variables.$primary-color;
+  }
+
+  &__buttons {
+    @include mixins.flex(flex-start, center, 2rem);
+
+    padding-top: 5.9rem;
+
+    & > * {
+      @media screen and (width <= 768px) {
+        width: 100%;
+      }
+    }
+
+    @media screen and (width <= 768px) {
+      flex-direction: column;
+      padding-top: 3rem;
+    }
+  }
+
+  &__checkbox {
+    @include mixins.flex(flex-start, flex-start, 2.5rem, column);
+  }
+}

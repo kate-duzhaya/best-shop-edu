@@ -11,10 +11,170 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" type="text/css" href="../dist/css/main.css" />
-    <script type="module" src="../dist/js/main.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../scss/main.scss" />
+    <link rel="icon" type="image/png" href="../assets/img/icons/favicon.png" />
+    <script type="module" src="../ts/main.ts" defer></script>
 
     <title>Catalog - Best Shop</title>
   </head>
-  <body></body>
+  <body data-page="catalog">
+    <load ="./header.html" />
+    <main>
+      <section class="catalog-header u-default-padding">
+        <div class="catalog-header__container content-container">
+          <div class="catalog-header__left-column">
+            <p class="catalog-header__number-line"></p>
+            <button class="btn catalog-header__filter">
+              <img
+                src="../assets/img/icons/filter.svg"
+                alt="Filter"
+                class="catalog-header__filter-img"
+              />
+            </button>
+            <select
+              class="input-field input-field--select"
+              name="sort"
+              id="sortField"
+              autocomplete="off"
+            >
+              <option value="">Default sorting</option>
+              <option value="priceAsc">By price (lowest to highest)</option>
+              <option value="priceDesc">By price (highest to lowest)</option>
+              <option value="popularity">By popularity</option>
+              <option value="rating">By rating</option>
+            </select>
+          </div>
+          <div class="catalog-header__right-column">
+            <input
+              class="input-field input-field--search catalog-header__search"
+              type="search"
+              id="searchField"
+              name="search"
+              size="30"
+              placeholder="Search Models"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <form
+          class="filters u-default-padding u-padding-bottom-small"
+          id="filterProductsForm"
+          autocomplete="off"
+        >
+          <div class="filters__container content-container">
+            <div class="filters__fields">
+              <div class="form__group">
+                <label
+                  for="filterSizeField"
+                  class="subheading subheading--black"
+                  >Size</label
+                >
+                <select
+                  name="size"
+                  id="filterSizeField"
+                  class="input-field input-field--select input-field--stretched"
+                >
+                  <option value="">Choose option</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="S-L">S-L</option>
+                  <option value="S, M, XL">S, M, XL</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label
+                  for="filterColorField"
+                  class="subheading subheading--black"
+                  >Color</label
+                >
+                <select
+                  name="color"
+                  id="filterColorField"
+                  class="input-field input-field--select input-field--stretched"
+                >
+                  <option value="">Choose option</option>
+                  <option value="red">Red</option>
+                  <option value="blue">Blue</option>
+                  <option value="green">Green</option>
+                  <option value="black">Black</option>
+                  <option value="grey">Grey</option>
+                  <option value="yellow">Yellow</option>
+                  <option value="pink">Pink</option>
+                  <option value="beige">Beige</option>
+                  <option value="orange">Orange</option>
+                  <option value="brown">Brown</option>
+                  <option value="white">White</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label
+                  for="filterCategoryField"
+                  class="subheading subheading--black"
+                  >Category</label
+                >
+                <select
+                  name="category"
+                  id="filterCategoryField"
+                  class="input-field input-field--select input-field--stretched"
+                >
+                  <option value="">Choose option</option>
+                  <option value="carry-ons">Carry-ons</option>
+                  <option value="suitcases">Suitcases</option>
+                  <option value="luggage sets">Luggage sets</option>
+                  <option value="kids' luggage">Kids' luggage</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label
+                  class="checkbox-container subheading subheading--black filters__checkbox"
+                >
+                  On sale
+                  <input
+                    class="checkbox"
+                    type="checkbox"
+                    name="salesStatus"
+                    id="filterIsOnSale"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+            <div class="filters__buttons">
+              <button
+                class="btn btn--primary btn--primary--filter"
+                id="clearFiltersBtn"
+                type="reset"
+              >
+                Clear filters
+              </button>
+              <button
+                id="hideFiltersButton"
+                type="button"
+                class="btn btn--primary btn--primary--filter"
+              >
+                Hide filters
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="catalog-grid u-default-padding u-padding-bottom-big">
+        <div class="catalog-grid__container content-container">
+          <div class="catalog-grid__products">
+            <div class="catalog-grid__product-list"></div>
+            <div class="catalog-grid__pages-wrapper"></div>
+          </div>
+          <aside class="catalog-grid__sets">
+            <h3 class="sets--heading">Top Best Sets</h3>
+            <div class="catalog-grid__sets-list"></div>
+          </aside>
+        </div>
+      </section>
+      <load ="./benefits.html" />
+    </main>
+    <load ="./footer.html" />
+  </body>
 </html>

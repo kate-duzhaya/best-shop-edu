@@ -1,0 +1,22 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.split-screen {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.8rem;
+
+    @media screen and (width <= 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__text {
+    @include mixins.flex(space-between, flex-start, 3rem, column);
+  }
+
+  &__img {
+    @include mixins.responsive-image;
+  }
+}

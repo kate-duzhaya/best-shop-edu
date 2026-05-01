@@ -1,0 +1,67 @@
+<dialog id="modalLogin" class="modal modal--login">
+  <img
+    src="../assets/img/icons/close.svg"
+    alt="Close modal window icon"
+    class="btn close-modal"
+  />
+  <form class="login-form" type="submit" novalidate>
+    <div class="form__group form__group--login login-control">
+      <label for="emailField"
+        >Email address <span class="asterisk"><sup>*</sup></span></label
+      >
+      <input
+        type="email"
+        name="email"
+        id="emailFieldLogin"
+        class="input-field input-field--form input-field--stretched input-field--email"
+        required
+      />
+      <div class="input-error"></div>
+    </div>
+    <div class="form__group form__group--login login-control">
+      <label for="passwordFieldLogin"
+        >Password <span class="asterisk"><sup>*</sup></span></label
+      >
+      <div class="field-with-icon">
+        <input
+          type="password"
+          name="password"
+          id="passwordFieldLogin"
+          class="input-field input-field--form input-field--stretched input-field--password"
+          required
+        />
+        <img
+          src="../assets/img/icons/eye.svg"
+          alt="Reveal password"
+          class="reveal-pass"
+          role="button"
+        />
+      </div>
+      <div class="input-error"></div>
+    </div>
+
+    <div class="modal__additional">
+      <label class="checkbox-container remark remark--tertiary">
+        <input
+          class="checkbox"
+          type="checkbox"
+          name="isRememberMe"
+          id="isRememberMe"
+        />
+        <span class="checkmark"></span>
+        Remember me
+      </label>
+      <button class="btn btn--forgot-pswrd" type="button">
+        Forgot Your Password?
+      </button>
+    </div>
+    <button
+      class="btn btn--primary btn--primary--narrow"
+      id="loginBtn"
+      type="submit"
+    >
+      Log In
+    </button>
+  </form>
+  <div class="auth-error"></div>
+</dialog>

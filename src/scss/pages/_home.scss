@@ -3,13 +3,17 @@
 
 .hero {
   background-color: variables.$bg-grey;
-  padding-top: 12rem;
+  padding-top: 9rem;
   padding-bottom: 12rem;
   position: relative;
   z-index: 0;
 
   &__container {
     @include mixins.flex(space-between, center);
+
+    @media screen and (width <= 768px) {
+      flex-direction: column;
+    }
   }
 
   &__text-block {
@@ -38,15 +42,24 @@
     display: grid;
     grid-template-columns: variables.$grid-2-columns;
     box-shadow: variables.$primary-shadow;
+
+    @media screen and (width <= 768px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__text {
     padding: 7.5rem 7rem;
     background-color: variables.$primary-white;
+
+    @media screen and (width <= 768px) {
+      padding: 4.5rem 4rem;
+    }
   }
 
   &__chief {
     @include mixins.flex(flex-start, center, 2.2rem);
+
     padding-bottom: 2.8rem;
 
     &-photo {
@@ -61,7 +74,7 @@
   }
 
   &__discount {
-    background-image: url(../img/decorative/home-intro-bg.jpg);
+    background-image: url("../../assets/img/decorative/home-intro-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -69,11 +82,12 @@
     align-content: center;
     padding: 7.5rem 7rem;
 
+    @media screen and (width <= 768px) {
+      padding: 4.5rem 4rem;
+    }
+
     &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: variables.$overlay;
+      @include mixins.add-overlay;
     }
 
     & > * {
@@ -89,15 +103,23 @@
 
 .testimonial {
   &__cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    display: flex;
     gap: 2rem;
+
+    @media screen and (width <= 768px) {
+      flex-direction: column;
+    }
   }
 
   &__card {
     @include mixins.flex(flex-start, center, 2.4rem, column);
+
     padding: 4.5rem 4rem;
     box-shadow: variables.$primary-shadow;
+
+    @media screen and (width <= 768px) {
+      padding: 4.5rem 2rem;
+    }
   }
 
   &__name {

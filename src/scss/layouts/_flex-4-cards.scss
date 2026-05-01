@@ -1,0 +1,10 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.flex-4-cards {
+  @include mixins.flex(space-between, stretch, 2rem);
+
+  @media screen and (width <= 768px) {
+    flex-direction: column;
+  }
+}

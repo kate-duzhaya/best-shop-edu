@@ -3,7 +3,7 @@
 
 .benefits {
   background:
-    url("../img/decorative/benefits-lines-bg.png"),
+    url("../../assets/img/decorative/benefits-lines-bg.png"),
     variables.$primary-grey no-repeat;
   background-size: cover;
   background-position: top;
@@ -12,40 +12,58 @@
 
   &__list {
     list-style-type: none;
-    @include mixins.flex(center, center, 8rem);
-    flex-wrap: wrap;
+
+    @include mixins.flex(center, center, 4rem);
+
     row-gap: 1rem;
     margin-top: 3.2rem;
+
+    @media screen and (width <= 1024px) {
+      align-items: flex-start;
+    }
+
+    @media screen and (width <= 768px) {
+      flex-direction: column;
+    }
   }
 
   &__card {
     display: block;
-    flex: 1 0 26.5rem;
+
+    // flex: 1 0 26.5rem;
     @include mixins.flex(flex-start, center, 8px);
 
-    &::before {
-      content: "";
-      display: inline-block;
+    @media screen and (width <= 1024px) {
+      flex-direction: column;
+    }
+
+    @media screen and (width <= 768px) {
+      flex-direction: row;
       width: 100%;
-      max-width: 6rem;
-      aspect-ratio: 1;
-      background-size: contain;
     }
 
     &--1::before {
-      background: url("../img/decorative/benefit1.png");
+      @include mixins.add-image-pseudo-element(
+        "../../assets/img/decorative/benefit1.png"
+      );
     }
 
     &--2::before {
-      background: url("../img/decorative/benefit2.png");
+      @include mixins.add-image-pseudo-element(
+        "../../assets/img/decorative/benefit2.png"
+      );
     }
 
     &--3::before {
-      background: url("../img/decorative/benefit3.png");
+      @include mixins.add-image-pseudo-element(
+        "../../assets/img/decorative/benefit3.png"
+      );
     }
 
     &--4::before {
-      background: url("../img/decorative/benefit4.png");
+      @include mixins.add-image-pseudo-element(
+        "../../assets/img/decorative/benefit4.png"
+      );
     }
   }
 }

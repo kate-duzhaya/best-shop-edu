@@ -11,92 +11,14 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" type="text/css" href="../dist/css/main.css" />
-    <script type="module" src="../dist/js/main.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="./scss/main.scss" />
+    <link rel="icon" type="image/png" href="./assets/img/icons/favicon.png" />
+    <script type="module" src="./ts/main.ts" defer></script>
 
     <title>Best Shop</title>
   </head>
-  <body>
-    <header class="header u-default-padding">
-      <div class="content-container">
-        <div class="header__top-row">
-          <div class="header__icons header__icons--social">
-            <a href="#">
-              <img
-                class="header__icon header__icon--facebook"
-                src="../dist/img/icons/facebook.svg"
-                alt="Facebook"
-              />
-            </a>
-
-            <a href="#">
-              <img
-                class="header__icon header__icon--twitter"
-                src="../dist/img/icons/twitter.svg"
-                alt="Twitter"
-              />
-            </a>
-
-            <a href="#">
-              <img
-                class="header__icon header__icon--instagram"
-                src="../dist/img/icons/instagram.svg"
-                alt="Instagram"
-              />
-            </a>
-          </div>
-          <div class="header__logo">
-            <a href="#" class="header__logo--link">
-              <div class="header__logo--box">
-                <img
-                  src="../dist/img/icons/logo.svg"
-                  alt="Logo"
-                  class="header__logo--img"
-                />
-              </div>
-              <div class="header__logo--text">Best shop</div>
-            </a>
-          </div>
-          <div class="header__icons header__icons--user">
-            <a href="#">
-              <img
-                src="../dist/img/icons/user.svg"
-                alt="Profile"
-                class="header__icon header__icon--profile"
-              />
-            </a>
-
-            <a href="#">
-              <img
-                src="../dist/img/icons/shopping-cart.svg"
-                alt="Shopping cart"
-                class="header__icon header__icon--cart"
-              />
-            </a>
-          </div>
-        </div>
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a class="header__nav-link header__nav-link--active" href="#"
-                >Home</a
-              >
-            </li>
-            <li class="header__nav-item header__nav-item--has-dropdown">
-              <a class="header__nav-link" href="html/catalog.html">Catalog </a>
-            </li>
-            <li class="header__nav-item">
-              <a class="header__nav-link" href="html/about.html">About Us</a>
-            </li>
-            <li class="header__nav-item">
-              <a class="header__nav-link" href="html/contact.html"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+  <body data-page="home">
+    <load ="./html/header.html" />
     <main>
       <section class="hero u-default-padding">
         <div class="hero__container content-container">
@@ -106,11 +28,13 @@
               Phasellus risus turpis, pretium sit amet magna non, molestie
               ultricies enim. Nullam pulvinar felis at metus.
             </p>
-            <button class="btn btn--primary">View All Items</button>
+            <a href="/html/catalog.html" class="btn btn--primary">
+              View All Items
+            </a>
           </div>
           <div class="hero__image">
             <img
-              src="../dist/img/decorative/hero-img.png"
+              src="./assets/img/decorative/hero-img.png"
               alt="A brown leather suitcase with a lot of post stamps all over it"
             />
           </div>
@@ -122,7 +46,7 @@
           <div class="intro__text">
             <div class="intro__chief">
               <img
-                src="../dist/img/people/chief.png"
+                src="./assets/img/people/chief.png"
                 alt="A photo of the Chief Marketing Officer"
                 class="intro__chief-photo"
               />
@@ -159,7 +83,7 @@
         </div>
       </section>
 
-      <section class="travel u-default-padding">
+      <section class="travel u-default-padding u-padding-bottom-big">
         <div class="travel__container content-container u-center-text">
           <h2
             class="heading-secondary heading-secondary--black u-padding-bottom-small"
@@ -169,151 +93,120 @@
           <p class="paragraph paragraph--grey u-padding-bottom-medium">
             Duis vestibulum elit vel neque pharetra
           </p>
-          <div class="slider__wrapper">
-            <div class="slider__buttons">
+          <div class="slider__container">
+            <button class="slider__control prev slider__control--disabled">
               <img
-                class="slider__btn slider__btn--back slider__btn--disabled"
-                src="../dist/img/icons/arrow-back-white.svg"
+                class=""
+                src="./assets/img/icons/arrow-back-white.svg"
                 alt="Arrow back"
               />
+            </button>
+
+            <ul class="slider__track">
+              <li class="slider__item">
+                <div class="slider__text">
+                  <h3 class="heading-tertiary heading-tertiary--white">
+                    Duis vestibulum elit vel neque.
+                  </h3>
+                  <p class="slider__paragraph">
+                    Duis vestibulum vel neque pharetra vulputate. Quisque
+                    scelerisque nisi.
+                  </p>
+                </div>
+                <img src="./assets/img/slider/img1.jpg" alt="Travel suitcase" />
+              </li>
+              <li class="slider__item">
+                <div class="slider__text">
+                  <h3 class="heading-tertiary heading-tertiary--white">
+                    Neque vestibulum elit nequvel.
+                  </h3>
+                  <p class="slider__paragraph">
+                    Duis vestibulum vel neque pharetra vulputate. Quisque
+                    scelerisque nisi.
+                  </p>
+                </div>
+                <img src="./assets/img/slider/img6.png" alt="Travel suitcase" />
+              </li>
+              <li class="slider__item">
+                <div class="slider__text">
+                  <h3 class="heading-tertiary heading-tertiary--white">
+                    Elituis stibulum elit velneque.
+                  </h3>
+                  <p class="slider__paragraph">
+                    Duis vestibulum vel neque pharetra vulputate. Quisque
+                    scelerisque nisi.
+                  </p>
+                </div>
+                <img src="./assets/img/slider/img2.jpg" alt="Travel suitcase" />
+              </li>
+              <li class="slider__item">
+                <div class="slider__text">
+                  <h3 class="heading-tertiary heading-tertiary--white">
+                    Vel vestibulum elit tuvel euqen.
+                  </h3>
+                  <p class="slider__paragraph">
+                    Duis vestibulum vel neque pharetra vulputate. Quisque
+                    scelerisque nisi.
+                  </p>
+                </div>
+                <img src="./assets/img/slider/img3.jpg" alt="Travel suitcase" />
+              </li>
+              <li class="slider__item">
+                <div class="slider__text">
+                  <h3 class="heading-tertiary heading-tertiary--white">
+                    Aliquid deserunt commodi nemo iste.
+                  </h3>
+                  <p class="slider__paragraph">
+                    Duis vestibulum vel neque pharetra vulputate. Quisque
+                    scelerisque nisi.
+                  </p>
+                </div>
+                <img src="./assets/img/slider/img7.png" alt="Travel suitcase" />
+              </li>
+              <li class="slider__item">
+                <div class="slider__text">
+                  <h3 class="heading-tertiary heading-tertiary--white">
+                    Deserunt enim, eligendi pariatur.
+                  </h3>
+                  <p class="slider__paragraph">
+                    Duis vestibulum vel neque pharetra vulputate. Quisque
+                    scelerisque nisi.
+                  </p>
+                </div>
+                <img src="./assets/img/slider/img5.png" alt="Travel suitcase" />
+              </li>
+              <li class="slider__item">
+                <div class="slider__text">
+                  <h3 class="heading-tertiary heading-tertiary--white">
+                    Accusantium saepe aliquid.
+                  </h3>
+                  <p class="slider__paragraph">
+                    Duis vestibulum vel neque pharetra vulputate. Quisque
+                    scelerisque nisi.
+                  </p>
+                </div>
+                <img src="./assets/img/slider/img4.jpg" alt="Travel suitcase" />
+              </li>
+              <li class="slider__item">
+                <div class="slider__text">
+                  <h3 class="heading-tertiary heading-tertiary--white">
+                    Numquam sint soluta omnis esse.
+                  </h3>
+                  <p class="slider__paragraph">
+                    Duis vestibulum vel neque pharetra vulputate. Quisque
+                    scelerisque nisi.
+                  </p>
+                </div>
+                <img src="./assets/img/slider/img8.png" alt="Travel suitcase" />
+              </li>
+            </ul>
+
+            <button class="slider__control next">
               <img
-                class="slider__btn slider__btn--frwd"
-                src="../dist/img/icons/arrow-frwd-white.svg"
+                src="./assets/img/icons/arrow-frwd-white.svg"
                 alt="Arrow forward"
               />
-            </div>
-            <div class="slider__gallery">
-              <div class="slider__card-list">
-                <div class="slider__card-item">
-                  <div class="slider__card-text">
-                    <h3 class="heading-tertiary heading-tertiary--white">
-                      Duis vestibulum elit vel neque.
-                    </h3>
-                    <p class="slider__paragraph">
-                      Duis vestibulum vel neque pharetra vulputate. Quisque
-                      scelerisque nisi.
-                    </p>
-                  </div>
-                  <img
-                    class="slider__image"
-                    src="../dist/img/slider/img1.jpg"
-                    alt="Travel suitcase"
-                  />
-                </div>
-                <div class="slider__card-item">
-                  <div class="slider__card-text">
-                    <h3 class="heading-tertiary heading-tertiary--white">
-                      Neque vestibulum elit nequvel.
-                    </h3>
-                    <p class="slider__paragraph">
-                      Duis vestibulum vel neque pharetra vulputate. Quisque
-                      scelerisque nisi.
-                    </p>
-                  </div>
-                  <img
-                    class="slider__image"
-                    src="../dist/img/slider/img6.png"
-                    alt="Travel suitcase"
-                  />
-                </div>
-                <div class="slider__card-item">
-                  <div class="slider__card-text">
-                    <h3 class="heading-tertiary heading-tertiary--white">
-                      Elituis stibulum elit velneque.
-                    </h3>
-                    <p class="slider__paragraph">
-                      Duis vestibulum vel neque pharetra vulputate. Quisque
-                      scelerisque nisi.
-                    </p>
-                  </div>
-                  <img
-                    class="slider__image"
-                    src="../dist/img/slider/img2.jpg"
-                    alt="Travel suitcase"
-                  />
-                </div>
-                <div class="slider__card-item">
-                  <div class="slider__card-text">
-                    <h3 class="heading-tertiary heading-tertiary--white">
-                      Vel vestibulum elit tuvel euqen.
-                    </h3>
-                    <p class="slider__paragraph">
-                      Duis vestibulum vel neque pharetra vulputate. Quisque
-                      scelerisque nisi.
-                    </p>
-                  </div>
-                  <img
-                    class="slider__image"
-                    src="../dist/img/slider/img3.jpg"
-                    alt="Travel suitcase"
-                  />
-                </div>
-                <div class="slider__card-item">
-                  <div class="slider__card-text">
-                    <h3 class="heading-tertiary heading-tertiary--white">
-                      Aliquid deserunt commodi nemo iste.
-                    </h3>
-                    <p class="slider__paragraph">
-                      Duis vestibulum vel neque pharetra vulputate. Quisque
-                      scelerisque nisi.
-                    </p>
-                  </div>
-                  <img
-                    class="slider__image"
-                    src="../dist/img/slider/img7.png"
-                    alt="Travel suitcase"
-                  />
-                </div>
-                <div class="slider__card-item">
-                  <div class="slider__card-text">
-                    <h3 class="heading-tertiary heading-tertiary--white">
-                      Deserunt enim, eligendi pariatur.
-                    </h3>
-                    <p class="slider__paragraph">
-                      Duis vestibulum vel neque pharetra vulputate. Quisque
-                      scelerisque nisi.
-                    </p>
-                  </div>
-                  <img
-                    class="slider__image"
-                    src="../dist/img/slider/img5.png"
-                    alt="Travel suitcase"
-                  />
-                </div>
-                <div class="slider__card-item">
-                  <div class="slider__card-text">
-                    <h3 class="heading-tertiary heading-tertiary--white">
-                      Accusantium saepe aliquid.
-                    </h3>
-                    <p class="slider__paragraph">
-                      Duis vestibulum vel neque pharetra vulputate. Quisque
-                      scelerisque nisi.
-                    </p>
-                  </div>
-                  <img
-                    class="slider__image"
-                    src="../dist/img/slider/img4.jpg"
-                    alt="Travel suitcase"
-                  />
-                </div>
-                <div class="slider__card-item">
-                  <div class="slider__card-text">
-                    <h3 class="heading-tertiary heading-tertiary--white">
-                      Numquam sint soluta omnis esse.
-                    </h3>
-                    <p class="slider__paragraph">
-                      Duis vestibulum vel neque pharetra vulputate. Quisque
-                      scelerisque nisi.
-                    </p>
-                  </div>
-                  <img
-                    class="slider__image"
-                    src="../dist/img/slider/img8.png"
-                    alt="Travel suitcase"
-                  />
-                </div>
-              </div>
-            </div>
+            </button>
           </div>
         </div>
       </section>
@@ -332,28 +225,7 @@
         </div>
       </section>
 
-      <section class="banner u-default-padding u-padding-bottom-big">
-        <div class="banner__container content-container">
-          <div class="banner__discount banner__side">
-            <p class="banner__discount-value">50%</p>
-            <p class="banner__discount-description">
-              Curabitur vulputate arcu odio, ac facilisis diam.
-            </p>
-          </div>
-          <div class="banner__offer banner__side">
-            <h2 class="heading-secondary heading-secondary--white">
-              Offer Of The Month
-            </h2>
-            <p class="paragraph paragraph--white">
-              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
-              imperdiet et leo in vulputate.
-            </p>
-            <button class="btn btn--primary btn--primary--offer">
-              Get offer today
-            </button>
-          </div>
-        </div>
-      </section>
+      <load ="./html/banner.html" />
 
       <section class="new-arrivals u-default-padding u-padding-bottom-big">
         <div class="products-row__container content-container u-center-text">
@@ -382,7 +254,7 @@
           <div class="testimonial__cards">
             <div class="testimonial__card">
               <img
-                src="../dist/img/people/customer1.jpg"
+                src="./assets/img/people/customer1.jpg"
                 alt="A smiling young man in glasses"
                 class="testimonial__img"
               />
@@ -390,12 +262,12 @@
                 Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
                 mperdiet et leo in vulputate.
               </p>
-              <p class="testimonial__name">Ethan Wade, New York</p>
+              <p class="subheading subheading--primary">Ethan Wade, New York</p>
             </div>
 
             <div class="testimonial__card">
               <img
-                src="../dist/img/people/customer2.jpg"
+                src="./assets/img/people/customer2.jpg"
                 alt="A smiling young woman with curly dark hair"
                 class="testimonial__img"
               />
@@ -403,12 +275,14 @@
                 Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
                 mperdiet et leo in vulputate.
               </p>
-              <p class="testimonial__name">Jane Reyes, California</p>
+              <p class="subheading subheading--primary">
+                Jane Reyes, California
+              </p>
             </div>
 
             <div class="testimonial__card">
               <img
-                src="../dist/img/people/customer3.jpg"
+                src="./assets/img/people/customer3.jpg"
                 alt="A smiling young woman with straight black hair"
                 class="testimonial__img"
               />
@@ -416,131 +290,14 @@
                 Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
                 mperdiet et leo in vulputate.
               </p>
-              <p class="testimonial__name">Erica Banks, Miami</p>
+              <p class="subheading subheading--primary">Erica Banks, Miami</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="benefits u-default-padding">
-        <div class="benefits__container content-container">
-          <h3 class="heading-tertiary heading-tertiary--white">Our Benefits</h3>
-          <ul class="benefits__list">
-            <li class="benefits__card benefits__card--1">
-              Velit nisl sodales eget donec quis. volutpat orci.
-            </li>
-            <li class="benefits__card benefits__card--2">
-              Dolor eu varius. Morbi fermentum velit nisl.
-            </li>
-            <li class="benefits__card benefits__card--3">
-              Malesuada fames ac ante ipsum primis in faucibus.
-            </li>
-            <li class="benefits__card benefits__card--4">
-              Nisl sodales eget donec quis. volutpat orci.
-            </li>
-          </ul>
-        </div>
-      </section>
+      <load ="./html/benefits.html" />
     </main>
-    <footer class="footer u-default-padding">
-      <div class="footer__container content-container">
-        <div class="footer__link-groups">
-          <nav aria-label="About company" class="footer__block">
-            <a href="html/about.html" class="footer__link"
-              ><h4 class="heading-h4">About us</h4></a
-            >
-            <ul class="footer__links">
-              <li>
-                <a class="footer__link" href="#">Organisation</a>
-              </li>
-              <li>
-                <a class="footer__link" href="#">Partners</a>
-              </li>
-              <li>
-                <a class="footer__link" href="#">Clients</a>
-              </li>
-            </ul>
-          </nav>
-
-          <nav aria-label="Company links" class="footer__block">
-            <h4 class="heading-h4">Interesting links</h4>
-            <ul class="footer__links">
-              <li>
-                <a class="footer__link" href="#">Photo Gallery</a>
-              </li>
-              <li>
-                <a class="footer__link" href="#">Our Team</a>
-              </li>
-              <li>
-                <a class="footer__link" href="#">Socials</a>
-              </li>
-            </ul>
-          </nav>
-
-          <div aria-label="Achievement links" class="footer__block">
-            <h4 class="heading-h4">Achievements</h4>
-            <ul class="footer__links">
-              <li>
-                <a class="footer__link" href="#">Winning Awards</a>
-              </li>
-              <li>
-                <a class="footer__link" href="#">Press</a>
-              </li>
-              <li>
-                <a class="footer__link" href="#">Our Amazing Clients</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__shipping footer__block">
-          <h4 class="heading-h4">Shipping Information</h4>
-          <p class="footer__paragraph">
-            Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac.
-            Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec
-            interdum, lectus in convallis pulvinar, enim elit porta sapien, vel
-            finibus erat felis sed neque. Etiam aliquet neque sagittis erat
-            tincidunt aliquam.
-          </p>
-        </div>
-
-        <div class="footer__contact footer__block">
-          <div class="footer__block">
-            <a href="html/contact.html" class="footer__link"
-              ><h4 class="heading-h4">Contact Us</h4></a
-            >
-            <p class="footer__paragraph">
-              Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
-              volutpat orci. Sed ipsum felis, tristique egestas et, convallis ac
-              velitn consequat nec luctus.
-            </p>
-          </div>
-          <address class="footer__contact-info">
-            <div
-              class="footer__contact-block footer__contact-block--phone footer__paragraph"
-            >
-              Phone: (+63) 236 6322
-            </div>
-            <div
-              class="footer__contact-block footer__contact-block--email footer__paragraph"
-            >
-              public@news.com
-            </div>
-            <div
-              class="footer__contact-block footer__contact-block--opening-hours footer__paragraph"
-            >
-              Mon - Fri: 10am - 6pm<br />
-              Sat - Sun: 10am - 6pm
-            </div>
-            <div
-              class="footer__contact-block footer__contact-block--address footer__paragraph"
-            >
-              639 Jade Valley, <br />
-              Washington DC
-            </div>
-          </address>
-        </div>
-      </div>
-      <small class="footer__copyright">&copy; Copyright 2025</small>
-    </footer>
+    <load ="./html/footer.html" />
   </body>
 </html>

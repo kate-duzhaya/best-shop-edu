@@ -1,9 +1,9 @@
 @use "../abstracts/variables";
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: variables.$default-font-family;
   font-size: variables.$default-font-size;
-  font-weight: 400;
+  font-weight: variables.$default-font-weight;
   color: variables.$primary-black;
 }
 
@@ -11,14 +11,14 @@ body {
   &__logo--text {
     text-transform: uppercase;
     color: variables.$primary-color;
-    font-weight: 700;
-    font-size: 3rem;
+    font-weight: variables.$bold-font-weight;
+    font-size: clamp(1rem, 2.5vw + 1rem, 3rem);
   }
 
   &__nav-link {
     &:link,
     &:visited {
-      font-weight: 700;
+      font-weight: variables.$bold-font-weight;
       font-size: 1.8rem;
       color: variables.$primary-black;
       text-transform: capitalize;
@@ -32,7 +32,7 @@ body {
 }
 
 .heading-primary {
-  font-weight: 900;
+  font-weight: variables.$black-font-weight;
   font-size: variables.$heading-primary-font-size;
   color: variables.$primary-black;
 }
@@ -42,6 +42,10 @@ body {
 
   &--grey {
     color: variables.$primary-grey;
+  }
+
+  &--light-grey {
+    color: variables.$field-border-grey;
   }
 
   &--white {
@@ -56,30 +60,55 @@ body {
 .btn {
   text-transform: capitalize;
   font-family: inherit;
-  cursor: pointer;
+  font-weight: variables.$bold-font-weight;
 
   &--primary {
     color: variables.$primary-white;
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: clamp(1.1rem, 1.5vw + 1.1rem, 1.8rem);
 
     &--narrow {
-      font-size: 1.7rem;
+      font-size: clamp(1.1rem, 1.5vw + 1.1rem, 1.7rem);
     }
+
+    &--filter,
+    &--cart {
+      font-size: variables.$btn-15px;
+      text-transform: uppercase;
+    }
+  }
+
+  &--secondary {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  }
+
+  &--page.current-page {
+    font-size: variables.$btn-15px;
+    color: variables.$primary-white;
+    line-height: 1.8rem;
+  }
+
+  &--tab {
+    text-transform: uppercase;
+    color: variables.$primary-black;
+  }
+
+  &--forgot-pswrd {
+    color: variables.$primary-color;
   }
 }
 
 .intro__chief {
   &-name {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: variables.$bold-font-weight;
     padding-bottom: 7px;
   }
 }
 
 .heading-secondary {
   font-size: variables.$heading-secondary-font-size;
-  font-weight: 900;
+  font-weight: variables.$black-font-weight;
 
   &--black {
     color: variables.$primary-black;
@@ -92,7 +121,7 @@ body {
 
 .heading-tertiary {
   font-size: variables.$heading-tertiary-font-size;
-  font-weight: 700;
+  font-weight: variables.$bold-font-weight;
 
   &--black {
     color: variables.$primary-black;
@@ -108,12 +137,12 @@ body {
     color: variables.$primary-white;
     text-transform: uppercase;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: variables.$bold-font-weight;
   }
 
   &__price {
     font-size: variables.$heading-tertiary-font-size;
-    font-weight: 700;
+    font-weight: variables.$bold-font-weight;
     color: variables.$primary-grey;
   }
 }
@@ -123,20 +152,13 @@ body {
 
   &__discount {
     &-value {
-      font-size: 22rem;
-      font-weight: 900;
-      line-height: 22rem;
+      font-size: clamp(5rem, 12vw + 3rem, 22rem);
+      font-weight: variables.$black-font-weight;
     }
+
     &-description {
       font-size: 2rem;
     }
-  }
-}
-
-.testimonial {
-  &__name {
-    font-weight: 700;
-    color: variables.$primary-color;
   }
 }
 
@@ -150,7 +172,7 @@ body {
 
 .heading-h4 {
   font-size: variables.$heading-h4;
-  font-weight: 700;
+  font-weight: variables.$bold-font-weight;
   text-transform: capitalize;
 }
 
@@ -176,7 +198,148 @@ body {
 .slider {
   &__paragraph {
     color: variables.$primary-white;
-    font-size: 1.9rem;
-    line-height: 2.8rem;
+    font-size: variables.$heading-tertiary-font-size;
+    line-height: clamp(1.7rem, 1.5vw + 1.7rem, 2.8rem);
+  }
+}
+
+.catalog-header {
+  &__number-line {
+    color: variables.$primary-grey;
+    font-size: variables.$smaller-font-size;
+    text-transform: capitalize;
+  }
+}
+
+.input-field,
+.input-field::placeholder {
+  font: variables.$smaller-font-size variables.$default-font-family;
+  color: variables.$primary-grey;
+}
+
+.catalog-grid__set:link,
+.catalog-grid__set:visited {
+  color: variables.$primary-black;
+}
+
+.sets {
+  color: variables.$primary-black;
+
+  &--heading {
+    font-size: variables.$default-font-size;
+    font-weight: variables.$bold-font-weight;
+  }
+
+  &--description {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: variables.$default-font-weight;
+  }
+}
+
+.header-banner__heading {
+  font-size: variables.$heading-primary-font-size;
+  font-weight: variables.$bold-font-weight;
+  color: variables.$primary-white;
+  text-transform: capitalize;
+}
+
+.team {
+  &__name {
+    text-transform: uppercase;
+    font-weight: variables.$bold-font-weight;
+    font-size: clamp(1.1rem, 1.5vw + 1.1rem, 2.2rem);
+    line-height: clamp(1.8rem, 1.5vw + 1.8rem, 2.7rem);
+  }
+}
+
+.heading-product {
+  color: variables.$primary-black;
+  font-size: variables.$heading-product-page;
+  font-weight: variables.$bold-font-weight;
+  line-height: 3.7rem;
+  text-wrap-style: pretty;
+}
+
+.subheading {
+  font-size: variables.$default-font-size;
+  font-weight: variables.$bold-font-weight;
+  line-height: 2.1rem;
+
+  &--primary {
+    color: variables.$primary-color;
+  }
+
+  &--grey {
+    color: variables.$primary-grey;
+  }
+}
+
+.remark {
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+
+  &--primary {
+    color: variables.$primary-grey;
+  }
+
+  &--tertiary {
+    color: variables.$tertiary-grey;
+  }
+
+  &--black {
+    color: variables.$primary-black;
+  }
+
+  &--upper {
+    font-weight: variables.$bold-font-weight;
+    text-transform: uppercase;
+  }
+}
+
+.product-info {
+  &__payment {
+    color: variables.$tertiary-grey;
+    font-weight: variables.$bold-font-weight;
+    font-size: 2.3rem;
+  }
+}
+
+.heading-contact {
+  font-size: 2.5rem;
+  font-weight: variables.$bold-font-weight;
+  text-transform: capitalize;
+  padding-bottom: 2rem;
+}
+
+.empty-message {
+  font-weight: variables.$bold-font-weight;
+  color: variables.$tertiary-grey;
+}
+
+.cart {
+  &__table {
+    font-weight: variables.$bold-font-weight;
+  }
+
+  &__cell {
+    @media screen and (width <= 768px) {
+      font-size: clamp(1rem, 1vw + 1rem, 1.7rem);
+    }
+  }
+
+  &__col-name {
+    color: variables.$primary-white;
+    text-transform: uppercase;
+  }
+
+  &__total {
+    color: variables.$primary-white;
+    font-weight: variables.$bold-font-weight;
+    text-transform: capitalize;
+
+    &--main {
+      font-size: 2rem;
+    }
   }
 }

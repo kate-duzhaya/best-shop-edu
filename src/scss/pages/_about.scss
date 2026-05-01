@@ -1,0 +1,30 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.team {
+  &__members {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3.5rem;
+
+    @media screen and (width <= 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include mixins.flex(space-between, center, 2.7rem, column);
+
+    @media screen and (width <= 768px) {
+      gap: 1rem;
+    }
+  }
+
+  &__img {
+    @include mixins.responsive-image;
+  }
+
+  &__img-wrapper {
+    box-shadow: variables.$primary-shadow;
+  }
+}

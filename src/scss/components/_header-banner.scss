@@ -1,0 +1,49 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.header-banner {
+  @include mixins.flex(center, center);
+
+  padding: 21rem 1.5rem;
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+
+  @media screen and (width <= 480px) {
+    padding: 15rem 1.5rem;
+  }
+
+  &--about {
+    background-image: url("../../assets/img/decorative/bg-about-us.jpg");
+  }
+
+  &--contact {
+    background-image: url("../../assets/img/decorative/bg-contact.jpg");
+  }
+
+  &--cart {
+    padding-top: 8.2rem;
+    padding-bottom: 8.2rem;
+    background-image: url("../../assets/img/decorative/bg-cart.jpg");
+  }
+
+  &::before {
+    @include mixins.add-overlay;
+  }
+
+  &__text {
+    max-width: 42.6rem;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+
+    &--cart {
+      margin-bottom: 0;
+    }
+  }
+}

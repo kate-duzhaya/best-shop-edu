@@ -1,0 +1,395 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="../scss/main.scss" />
+    <link rel="icon" type="image/png" href="../assets/img/icons/favicon.png" />
+    <script type="module" src="../ts/main.ts" defer></script>
+
+    <title>Best Shop</title>
+  </head>
+  <body data-page="productDetails">
+    <load ="./header.html" />
+    <main>
+      <section class="product u-default-padding">
+        <div class="product__container content-container">
+          <div class="product-gallery">
+            <!-- <div class="product-gallery__img--main"> -->
+            <img
+              src=""
+              alt=""
+              class="product-gallery__img product-gallery__img--main"
+            />
+            <!-- </div> -->
+            <!-- <div class="product-gallery__small-images"> -->
+            <!-- <div class=""> -->
+            <!-- <div class="thumbnails"> -->
+            <img
+              src="../assets/img/suitcases/productDetails-small1.jpg"
+              alt="Suitcase"
+              class="product-gallery__img product-gallery__img--thumb"
+            />
+            <!-- </div> -->
+            <!-- <div class=""> -->
+            <img
+              src="../assets/img/suitcases/productDetails-small2.jpg"
+              alt="Suitcase"
+              class="product-gallery__img product-gallery__img--thumb"
+            />
+            <!-- </div> -->
+            <!-- <div class=""> -->
+            <img
+              src="../assets/img/suitcases/productDetails-small3.jpg"
+              alt="Suitcase"
+              class="product-gallery__img product-gallery__img--thumb"
+            />
+            <!-- </div> -->
+            <!-- <div class=""> -->
+            <img
+              src="../assets/img/suitcases/productDetails-small4.jpg"
+              alt="Suitcase"
+              class="product-gallery__img product-gallery__img--thumb"
+            />
+            <!-- </div> -->
+            <!-- </div> -->
+            <!-- </div> -->
+          </div>
+          <div class="product-info">
+            <header>
+              <h1 class="heading-product product-name"></h1>
+              <div class="product-info__header-rating">
+                <div class="static-stars product-rating">
+                  &#9733;&#9733;&#9733;&#9733;&#9733;
+                </div>
+                <p class="remark remark--primary">(1 Clients Review)</p>
+              </div>
+              <p
+                class="heading-tertiary heading-tertiary--black"
+                id="productPrice"
+              ></p>
+            </header>
+            <p class="paragraph paragraph--grey">
+              The new
+              <span class="product-name"></span>
+              is a bold reimagining of travel essentials, designed to elevate
+              every journey. Made with at least 30% recycled materials, its
+              lightweight yet impact-resistant shell combines eco- conscious
+              innovation with rugged durability.
+            </p>
+            <p class="paragraph paragraph--grey">
+              The ergonomic handle and GlideMotion spinner wheels ensure
+              effortless mobility while making a statement in sleek design.
+              Inside, the modular compartments and adjustable straps keep your
+              belongings secure and neatly organized, no matter the destination.
+            </p>
+            <form class="product-info__selection" id="productDetailsForm">
+              <div class="product-info__selection-fields">
+                <div class="form__group">
+                  <label
+                    for="productDetailsSize"
+                    class="subheading subheading--black"
+                    >Size</label
+                  >
+                  <select
+                    name="size"
+                    id="productDetailsSize"
+                    class="input-field input-field--select input-field--stretched"
+                    required
+                  ></select>
+                </div>
+                <div class="form__group">
+                  <label
+                    for="productDetailsColor"
+                    class="subheading subheading--black"
+                    required
+                    >Color</label
+                  >
+                  <select
+                    name="color"
+                    id="productDetailsColor"
+                    class="input-field input-field--select input-field--stretched"
+                  ></select>
+                </div>
+                <div class="form__group">
+                  <label
+                    for="productDetailsCategory"
+                    class="subheading subheading--black"
+                    required
+                    >Category</label
+                  >
+                  <select
+                    name="category"
+                    id="productDetailsCategory"
+                    class="input-field input-field--select input-field--stretched"
+                  ></select>
+                </div>
+              </div>
+              <div class="quantity-control">
+                <div class="product-info__form-buttons">
+                  <div class="quantity__container">
+                    <button
+                      type="button"
+                      class="btn quantity__btn quantity__btn--minus"
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      name="quantity"
+                      id="productDetailsQuantity"
+                      value="1"
+                      min="1"
+                      required
+                      class="input-field input-field--quantity"
+                      inputmode="numeric"
+                      novalidate
+                    />
+                    <button
+                      type="button"
+                      class="btn quantity__btn quantity__btn--plus"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    type="button"
+                    id="productDetailsAddToCart"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+                <div class="input-error"></div>
+              </div>
+            </form>
+            <div class="product-info__payment-methods">
+              <p class="product-info__payment">Payment:</p>
+              <img src="../assets/img/icons/visa.svg" alt="Visa logo" />
+              <img
+                src="../assets/img/icons/amex.svg"
+                alt="American Express logo"
+              />
+              <img
+                src="../assets/img/icons/masterCard.svg"
+                alt="MasterCard logo"
+              />
+              <img src="../assets/img/icons/payPal.svg" alt="PayPal logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="product-tabs u-default-padding u-margin-bottom-big">
+        <div class="product-tabs__container content-container">
+          <ul class="tabs">
+            <li>
+              <button class="btn btn--tab btn--active-tab" data-tab="details">
+                Details
+              </button>
+            </li>
+            <li>
+              <button class="btn btn--tab" data-tab="reviews">Reviews</button>
+            </li>
+            <li>
+              <button class="btn btn--tab" data-tab="policy">
+                Shipping policy
+              </button>
+            </li>
+          </ul>
+          <div class="tabs__content tabs__details" data-content="details">
+            <p class="paragraph paragraph--grey">
+              Vestibulum commodo sapien non elit porttitor, vitae volutpat nibh
+              mollis. Nulla porta risus id neque tempor, in efficitur justo
+              imperdiet. Etiam a ex at ante tincidunt imperdiet. Nunc congue ex
+              vel nisl viverra, sit amet aliquet lectus ullamcorper. Praesent
+              luctus lacus non lorem elementum, eu tristique sapien suscipit.
+              Sed bibendum, ipsum nec viverra malesuada, erat nisi sodales
+              purus, eget hendrerit dui ligula eu enim. Ut non est nisi.
+              Pellentesque tristique pretium dolor eu commodo. Proin iaculis
+              nibh vitae lectus mollis bibendum. Quisque varius eget urna sit
+              amet luctus. Suspendisse potenti. Curabitur ac placerat est, sit
+              amet sodales risus. Pellentesque viverra dui auctor, ullamcorper
+              turpis pharetra, facilisis quam.
+            </p>
+            <p class="paragraph paragraph--grey">
+              Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius
+              eget urna sit amet luctus. Suspendisse potenti. Curabitur ac
+              placerat est, sit amet sodales risus. Pellentesque viverra dui
+              auctor, ullamcorper turpis pharetra, facilisis quam. Proin iaculis
+              nibh vitae lectus mollis bibendum.
+            </p>
+            <p class="paragraph paragraph--grey">
+              Quisque varius eget urna sit amet luctus. Suspendisse potenti.
+              Curabitur ac placerat est, sit amet sodales risus. Pellentesque
+              viverra dui auctor, ullamcorper turpis pharetra, facilisis quam.
+            </p>
+          </div>
+          <div
+            class="tabs__content tabs__reviews u-hidden"
+            data-content="reviews"
+          >
+            <div class="reviews__submitted">
+              <h3 class="subheading">
+                1 review for
+                <span class="product-name"
+                  >Global Explorer Max Comfort Suitcase Pro</span
+                >
+              </h3>
+              <div class="reviews__review-card">
+                <div class="review-card__img-wrapper">
+                  <img
+                    class="review-card__img"
+                    src="../assets/img/people/client-review.jpg"
+                    alt="A slightly smiling woman with brown hair"
+                  />
+                </div>
+                <div class="review-card__content">
+                  <div class="review-card__header">
+                    <h4 class="subheading subheading--grey">Ella Harper</h4>
+                    <span class="remark remark--tertiary">/ June 11, 2025</span>
+                    <div
+                      class="static-stars product-rating review-card__rating"
+                    >
+                      &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+                  </div>
+                  <p>
+                    Proin iaculis nibh vitae lectus mollis bibendum. Quisque
+                    varius eget urna sit amet luctus. Suspendisse potenti
+                    curabitur ac placerat est, sit amet sodales risus.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <form class="reviews__add" id="reviewForm" type="submit" novalidate>
+              <header class="reviews__form-header">
+                <h3 class="subheading">Add Review</h3>
+                <p class="remark remark--black">
+                  Your email address won’t be shared with anybody.
+                </p>
+              </header>
+              <div class="reviews__rate-product">
+                <span class="remark remark--upper">Rate product</span>
+                <div class="rating-container rating-container--submit">
+                  <span class="star" data-value="1">&#9734;</span>
+                  <span class="star" data-value="2">&#9734;</span>
+                  <span class="star" data-value="3">&#9734;</span>
+                  <span class="star" data-value="4">&#9734;</span>
+                  <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <input
+                  type="hidden"
+                  name="user-rating"
+                  id="rating-value"
+                  value="0"
+                />
+              </div>
+              <div class="reviews__form-grid">
+                <div class="input-control reviews__input--review">
+                  <textarea
+                    class="input-field input-field--form input-field--stretched"
+                    name="reviewText"
+                    id="reviewText"
+                    placeholder="Your Review"
+                  ></textarea>
+                  <div class="input-error"></div>
+                </div>
+                <div class="input-control reviews__input--name">
+                  <input
+                    type="text"
+                    class="input-field input-field--form input-field--stretched"
+                    name="name"
+                    id="reviewName"
+                    placeholder="Your Name"
+                  />
+                  <div class="input-error"></div>
+                </div>
+                <div class="input-control reviews__input--email">
+                  <input
+                    type="email"
+                    name="email"
+                    id="reviewEmail"
+                    class="input-field input-field--form input-field--stretched"
+                    placeholder="Your Email"
+                  />
+                  <div class="input-error"></div>
+                </div>
+              </div>
+              <label class="checkbox-container remark remark--tertiary">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="isToKeepClientData"
+                  id="reviewKeepClientData"
+                />
+                <span class="checkmark"></span>
+                Save my name, email, and website in this browser for when I
+                leave another comment.
+              </label>
+              <button
+                type="submit"
+                id="reviewSubmitBtn"
+                class="btn btn--primary btn--primary--narrow"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <div
+            class="tabs__content tabs__policy u-hidden"
+            data-content="policy"
+          >
+            <p class="paragraph paragraph--grey">
+              At Best Shop, we know that your next adventure can’t wait. That’s
+              why we process all orders within 1 to 2 business days. Once your
+              suitcase leaves our warehouse, you will receive a confirmation
+              email featuring a tracking number so you can follow its journey
+              right to your doorstep. We offer standard ground shipping across
+              the continental United States, typically arriving within 3 to 5
+              business days, with expedited options available at checkout for
+              those last-minute departures.
+            </p>
+            <p class="paragraph paragraph--grey">
+              To ensure your luggage arrives in pristine condition, every item
+              is inspected and secured in reinforced, eco-friendly packaging
+              designed to withstand the rigors of transit. Please note that
+              high-volume periods, such as holidays or major sales, may slightly
+              extend processing times. If you are ordering multiple items, they
+              may arrive in separate packages to ensure the safest handling for
+              each specific shell type and size.
+            </p>
+            <p class="paragraph paragraph--grey">
+              We currently offer international shipping to over 50 countries
+              worldwide. International delivery times vary significantly based
+              on the destination and local customs processing, generally ranging
+              from 7 to 14 business days. Please be aware that international
+              orders may be subject to import duties and taxes once a shipment
+              reaches your country; these charges are the responsibility of the
+              recipient and are not included in our standard shipping rates.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="suggested u-default-padding u-margin-bottom-big">
+        <div class="suggested__container content-container u-center-text">
+          <h2
+            class="heading-product heading-product--black u-padding-bottom-medium u-underline-span"
+          >
+            <span>You May Also Like</span>
+          </h2>
+          <div class="suggested__products products-row__products"></div>
+        </div>
+      </section>
+      <load ="./benefits.html" />
+    </main>
+    <load ="./footer.html" />
+  </body>
+</html>

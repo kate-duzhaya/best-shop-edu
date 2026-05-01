@@ -3,10 +3,12 @@
 
 .product-card {
   @include mixins.flex(flex-start, center, 0, column);
+
   max-width: variables.$product-card-max-width;
   position: relative;
   text-wrap: balance;
-  // flex: 1;
+  text-align: center;
+  flex: 1;
 
   &__sale {
     position: absolute;
@@ -14,18 +16,33 @@
     left: 1.5rem;
     background-color: variables.$primary-color;
     padding: 0.6rem 1rem;
+    z-index: 1;
   }
 
   &__image {
-    width: 100%;
-    object-fit: cover;
-    display: block;
+    @include mixins.responsive-image;
+
+    aspect-ratio: 3 / 4;
 
     &-box {
+      display: block;
+      width: 100%;
       margin-bottom: 2.4rem;
       text-align: center;
       box-shadow: variables.$primary-shadow;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        @include mixins.hover-card-effect;
+      }
     }
+  }
+
+  &__right-side {
+    @include mixins.flex(flex-start, center, 0, column);
+
+    flex-grow: 1;
   }
 
   &__name {
@@ -38,5 +55,40 @@
 
   &__btn {
     margin-top: 1.6rem;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .product-card {
+    flex-direction: row;
+    gap: 4rem;
+    width: 100%;
+    max-width: 100%;
+
+    &__image-box {
+      margin-bottom: 0;
+    }
+
+    &__right-side {
+      width: 100%;
+      gap: 1rem;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (width <= 480px) {
+  .product-card {
+    align-items: stretch;
+
+    &__image-box {
+      width: 60%;
+    }
+
+    &__btn {
+      padding: 1rem;
+      margin-top: 1rem;
+    }
   }
 }

@@ -3,19 +3,52 @@
 .content-container {
   max-width: variables.$content-max-width;
   margin: 0 auto;
+
+  @media screen and (width <= 1440px) {
+    max-width: variables.$content-max-width-1440;
+  }
 }
 
 .u-default-padding {
   padding-left: variables.$padding-default-width;
   padding-right: variables.$padding-default-width;
+
+  @media screen and (width <= 768px) {
+    padding-left: variables.$padding-default-width-mobile;
+    padding-right: variables.$padding-default-width-mobile;
+  }
+}
+
+.u-margin-bottom-big {
+  margin-bottom: variables.$big-distance;
+
+  @media screen and (width <= 768px) {
+    margin-bottom: variables.$big-distance-mobile;
+  }
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 7rem;
+
+  @media screen and (width <= 768px) {
+    margin-bottom: variables.$medium-distance-mobile;
+  }
 }
 
 .u-padding-bottom-big {
   padding-bottom: variables.$big-distance;
+
+  @media screen and (width <= 768px) {
+    padding-bottom: variables.$big-distance-mobile;
+  }
 }
 
 .u-padding-bottom-medium {
-  padding-bottom: 6rem;
+  padding-bottom: variables.$medium-distance;
+
+  @media screen and (width <= 768px) {
+    padding-bottom: variables.$medium-distance-mobile;
+  }
 }
 
 .u-padding-bottom-small {
@@ -24,4 +57,19 @@
 
 .u-center-text {
   text-align: center;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-underline-span {
+  & span {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid variables.$primary-color;
+
+    @media screen and (width <= 480px) {
+      border-bottom: none;
+    }
+  }
 }

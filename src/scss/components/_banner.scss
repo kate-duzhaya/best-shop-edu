@@ -4,8 +4,8 @@
 .banner {
   &__container {
     @include mixins.flex(flex-start, stretch, 17rem, row);
-    flex-wrap: wrap;
-    background-image: url("../img/decorative/banner-bg.jpg");
+
+    background-image: url("../../assets/img/decorative/banner-bg.jpg");
     background-size: cover;
     background-position: top;
     padding: 7.4rem 10.4rem;
@@ -13,11 +13,20 @@
     position: relative;
     box-shadow: variables.$primary-shadow;
 
+    @media screen and (width <= 1024px) {
+      padding: 5rem 8rem;
+      gap: 8rem;
+    }
+
+    @media screen and (width <= 768px) {
+      flex-direction: column;
+      padding: 3rem 4rem;
+      gap: 4rem;
+    }
+
     &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: variables.$overlay;
+      @include mixins.add-overlay;
+
       width: 100%;
     }
 
@@ -28,11 +37,17 @@
 
   &__discount {
     @include mixins.flex(center, center, 0, column);
+
     flex: 1;
+
+    @media screen and (width <= 768px) {
+      align-items: flex-start;
+    }
   }
 
   &__offer {
     @include mixins.flex(flex-end, flex-start, 3rem, column);
+
     flex: 1;
   }
 }

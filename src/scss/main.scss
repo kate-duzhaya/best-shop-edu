@@ -1,23 +1,28 @@
 @use "abstracts/mixins";
 @use "abstracts/utilities";
 @use "abstracts/variables";
-
 @use "base/fonts";
 @use "base/reset";
-
 @use "components/banner";
 @use "components/benefits";
 @use "components/buttons";
-// @use "components/forms";
+@use "components/checkbox";
+@use "components/forms";
+@use "components/header-banner";
+@use "components/inputFields";
+@use "components/modalWindows";
 @use "components/product-card";
+@use "components/rating-stars";
 @use "components/slider";
-
+@use "components/small-card";
+@use "layouts/flex-4-cards";
 @use "layouts/footer";
+@use "layouts/grid2EqualColumns";
 @use "layouts/header";
+@use "layouts/pages";
 @use "layouts/products-row";
-
-// @use "pages/about";
-// @use "pages/cart";
-// @use "pages/catalog";
+@use "pages/about";
+@use "pages/cart";
+@use "pages/catalog";
 @use "pages/home";
-// @use "pages/product-details";
+@use "pages/product-details";

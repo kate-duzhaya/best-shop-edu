@@ -1,0 +1,134 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.input-field {
+  border: 2px solid variables.$field-border-grey;
+  padding: 1rem 1.4rem;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-size: 2rem 2rem;
+
+  &--select {
+    background-position: right 0.7em top 50%;
+    background-image: url("../../assets/img/icons/arrow-down.svg");
+    padding-right: 3rem;
+  }
+
+  &--stretched {
+    width: 100%;
+  }
+
+  &--quantity {
+    appearance: textfield;
+    width: 100%;
+    height: auto;
+    font-size: 2.5rem;
+    font-weight: variables.$bold-font-weight;
+    display: block;
+    border: 2px solid variables.$primary-color;
+    color: variables.$dark-grey;
+    text-align: center;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+
+  &--form {
+    border-color: rgba(variables.$primary-color, 0.5);
+  }
+
+  &--selected-filter {
+    border-color: variables.$primary-color;
+    color: variables.$primary-black;
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid variables.$primary-color;
+  }
+
+  &--password {
+    width: 100%;
+    padding-right: 4rem;
+  }
+
+  &--search {
+    background-image: url("../../assets/img/icons/search.svg");
+    background-position: left 0.7em top 50%;
+    padding-left: 4rem;
+  }
+}
+
+.textarea {
+  &--contact {
+    height: 11.7rem;
+  }
+}
+
+.input-control,
+.quantity-control,
+.login-control {
+  &.success input,
+  &.success textarea {
+    border-color: variables.$primary-color;
+  }
+
+  &.error input,
+  &.error textarea {
+    border-color: variables.$red;
+  }
+
+  & .input-error {
+    color: variables.$red;
+    padding-top: 5px;
+    font-size: 1.2rem;
+  }
+}
+
+.quantity__btn {
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: variables.$bold-font-weight;
+  color: variables.$dark-grey;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &--minus {
+    left: 2.2rem;
+    padding-right: 1rem;
+    margin-right: 1.5rem;
+  }
+
+  &--plus {
+    right: 2.2rem;
+    padding-left: 1rem;
+    margin-left: 1.5rem;
+  }
+
+  &--cart {
+    color: variables.$primary-black;
+  }
+}
+
+.cart-quantity {
+  border: none;
+  color: variables.$primary-black;
+  font-size: variables.$heading-tertiary-font-size;
+  background-color: transparent;
+}
+
+.field-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.reveal-pass {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

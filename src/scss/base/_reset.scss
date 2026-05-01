@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 *,
 *::after,
 *::before {
@@ -10,6 +12,7 @@ html {
   // this defines what 1rem is
   font-size: 62.5%;
   overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,4 +25,27 @@ a {
 
 // * {
 //   outline: 1px solid red;
+// }
+
+/* Highlight the specific element you are hovering over */
+// *:hover {
+//   outline: 3px solid blue !important;
+// }
+
+// /* Create a dynamic label showing the class and ID */
+// *:hover::after {
+//   content: "Class: ." attr(class) " | ID: #" attr(id);
+//   position: absolute;
+//   background: blue;
+//   color: white;
+//   font-family: monospace;
+//   font-size: 14px;
+//   font-weight: bold;
+//   padding: 4px 8px;
+//   z-index: 10000;
+//   pointer-events: none; /* Prevents the label itself from interfering with your mouse */
+// }
+
+// *:focus {
+//   outline: 2px solid variables.$primary-color;
 // }

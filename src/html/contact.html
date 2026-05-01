@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="../scss/main.scss" />
+    <link rel="icon" type="image/png" href="../assets/img/icons/favicon.png" />
+    <script type="module" src="../ts/main.ts" defer></script>
+
+    <title>Contact us - Best Shop</title>
+  </head>
+  <body data-page="contact">
+    <load ="./header.html" />
+    <main>
+      <header class="header-banner header-banner--contact u-margin-bottom-big">
+        <div class="header-banner__text">
+          <h1 class="header-banner__heading">Contact us</h1>
+          <p class="paragraph paragraph--light-grey">
+            Duis vestibulum elit vel neque pharetra vulputate. Duis rutrum non
+            risus in imperdiet.
+          </p>
+        </div>
+      </header>
+      <section class="contacts u-margin-bottom-big u-default-padding">
+        <div class="content-container flex-4-cards">
+          <div class="contacts__card small-card">
+            <div class="small-card__img-wrapper">
+              <img
+                src="../assets/img/icons/contact-1.svg"
+                alt="Our Location"
+                class="small-card__icon"
+              />
+            </div>
+            <h3 class="heading-tertiary heading-tertiary--black">
+              Our Location
+            </h3>
+            <p class="paragraph paragraph--black">
+              1234 NW Bobcat Lane, St. Robert, MO 65584-5678
+            </p>
+          </div>
+          <div class="contacts__card small-card">
+            <div class="small-card__img-wrapper">
+              <img
+                src="../assets/img/icons/contact-2.svg"
+                alt="Operating Time"
+                class="small-card__icon"
+              />
+            </div>
+            <h3 class="heading-tertiary heading-tertiary--black">
+              Operating Time
+            </h3>
+            <p class="paragraph paragraph--black">
+              Monday - Friday: 9am - 6 pm<br />
+              Weekends: 10:30 am - 6pm
+            </p>
+          </div>
+          <div class="contacts__card small-card">
+            <div class="small-card__img-wrapper">
+              <img
+                src="../assets/img/icons/contact-3.svg"
+                alt="Our Email"
+                class="small-card__icon"
+              />
+            </div>
+            <h3 class="heading-tertiary heading-tertiary--black">Our Email</h3>
+            <p class="paragraph paragraph--black">
+              best@shop.com <br />
+              info@bestshop.com
+            </p>
+          </div>
+          <div class="contacts__card small-card">
+            <div class="small-card__img-wrapper">
+              <img
+                src="../assets/img/icons/contact-4.svg"
+                alt="Call Us"
+                class="small-card__icon"
+              />
+            </div>
+            <h3 class="heading-tertiary heading-tertiary--black">Call Us</h3>
+            <p class="paragraph paragraph--black">
+              (268)142-8413 <br />
+              (760)265-2917
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="split-screen u-margin-bottom-big u-default-padding">
+        <div class="content-container split-screen__container">
+          <div class="split-screen__img-wrapper">
+            <img
+              src="../assets/img/decorative/contact-form.jpg"
+              alt="Different things in a suitcase: a photocamera, a hat, a passport, jeans clothes, sneakers and tickets"
+              class="split-screen__img"
+            />
+          </div>
+          <form
+            class="contact-form split-screen__form"
+            type="submit"
+            novalidate
+          >
+            <header class="contact-form__header">
+              <h2 class="heading-contact">
+                Your Feedback Is Much Appreciated!
+              </h2>
+              <p class="paragraph paragraph--black">
+                We will contact you when you complete the following form!
+              </p>
+            </header>
+            <div class="contact-form__fields">
+              <div class="form__group form__group--contact input-control">
+                <label for="contactName" class="subheading subheading--black"
+                  >Your Name <span class="asterisk"><sup>*</sup></span></label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  id="contactName"
+                  class="input-field input-field--form input-field--stretched input-field--name"
+                  required
+                />
+                <div class="input-error"></div>
+              </div>
+              <div class="form__group form__group--contact input-control">
+                <label for="contactEmail" class="subheading subheading--black"
+                  >Your Email Address
+                  <span class="asterisk"><sup>*</sup></span></label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  id="contactEmail"
+                  class="input-field input-field--form input-field--stretched input-field--email"
+                  required
+                />
+                <div class="input-error"></div>
+              </div>
+              <div class="form__group form__group--contact input-control">
+                <label for="contactTopic" class="subheading subheading--black"
+                  >Topic <span class="asterisk"><sup>*</sup></span></label
+                >
+                <input
+                  type="text"
+                  name="topic"
+                  id="contactTopic"
+                  class="input-field input-field--form input-field--stretched input-field--topic"
+                  required
+                />
+                <div class="input-error"></div>
+              </div>
+              <div class="form__group form__group--contact input-control">
+                <label
+                  for="contactMesssage"
+                  class="subheading subheading--black"
+                  >Your Message
+                  <span class="asterisk"><sup>*</sup></span></label
+                >
+                <textarea
+                  class="input-field input-field--form input-field--stretched textarea--contact"
+                  name="reviewText"
+                  id="contactMesssage"
+                  required
+                ></textarea>
+                <div class="input-error"></div>
+              </div>
+              <button
+                class="btn btn--primary btn--primary--narrow"
+                id="submitContactFormBtn"
+                type="submit"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <load ="./benefits.html" />
+    </main>
+    <load ="./footer.html" />
+  </body>
+</html>

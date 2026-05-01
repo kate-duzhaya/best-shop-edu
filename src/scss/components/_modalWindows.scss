@@ -1,0 +1,76 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.modal {
+  background-color: variables.$primary-white;
+  position: fixed;
+  margin: auto;
+  inset: 0;
+  border: none;
+  padding: 5rem 7rem;
+
+  @media screen and (width <= 768px) {
+    padding: 3rem 4rem;
+  }
+
+  &--login {
+    max-width: 48rem;
+  }
+
+  &__additional {
+    @include mixins.flex(space-between, center, 3rem);
+
+    @media screen and (width <= 480px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+  }
+
+  &::backdrop {
+    background-color: rgba(variables.$primary-black, 0.5);
+    backdrop-filter: blur(2px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.login-form {
+  & > *:not(:last-child) {
+    padding-bottom: 3rem;
+
+    @media screen and (width <= 480px) {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  & > button {
+    width: 100%;
+  }
+}
+
+.asterisk {
+  font-size: 1.7rem;
+  color: variables.$primary-color;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.success-message {
+  @include mixins.flex(center, center, 1.6rem, column);
+
+  text-align: center;
+}
+
+.auth-error {
+  text-align: center;
+  color: variables.$red;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}

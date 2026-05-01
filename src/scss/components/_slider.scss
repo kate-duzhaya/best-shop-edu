@@ -2,95 +2,114 @@
 @use "../abstracts/variables";
 
 .slider {
-  &__wrapper {
+  &__container {
     position: relative;
+    width: 100%;
+    margin: 0 auto;
   }
 
-  &__gallery {
-    display: flex;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
+  &__track {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+
+    --gap: 3.9rem;
+    --visible-items: 4;
+
+    @media (width <= 1024px) {
+      --visible-items: 3;
+    }
+
+    @media (width <= 768px) {
+      --visible-items: 2;
+    }
+
+    @media (width <= 480px) {
+      --visible-items: 1;
+    }
+
+    gap: var(--gap);
+    grid-auto-columns: calc(
+      (100% - (var(--gap) * (var(--visible-items) - 1))) / var(--visible-items)
+    );
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
       display: none;
     }
   }
 
-  &__card-list {
-    flex: none;
-    @include mixins.flex(flex-start, center, 3.9rem, row);
-    padding-bottom: variables.$big-distance;
-  }
-
-  &__card-item {
-    transition: transform 0.2s ease-in;
+  &__item {
     scroll-snap-align: start;
+    width: 100%;
+    aspect-ratio: 2 / 4;
+    transition: transform 0.2s ease-in;
     position: relative;
     text-align: left;
-    flex: 0 1 29.6rem;
-    // display: inline;
 
-    &::before {
-      content: "";
-      inset: 0;
-      position: absolute;
-      background-color: variables.$overlay;
+    img {
+      @include mixins.responsive-image;
     }
 
     &:hover {
-      @include mixins.scale-card();
+      @include mixins.scale-card;
+    }
+
+    &::before {
+      @include mixins.add-overlay;
+    }
+
+    @media (width <= 480px) {
+      aspect-ratio: 1;
     }
   }
 
-  &__card-text {
+  &__text {
     @include mixins.flex(flex-end, flex-start, 2rem, column);
+
     position: absolute;
     left: 0;
     bottom: 0;
     padding: 4rem;
   }
 
-  &__image {
-    width: 100%;
-    display: block;
-  }
-
-  &__btn {
-    padding: 2.5rem;
+  &__control {
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 2rem;
     cursor: pointer;
     position: absolute;
-    top: calc(50% - 7.7rem);
-    // transform: translateY(-50%);
-    z-index: 1;
-    display: block;
     border-radius: 50%;
     opacity: 0.9;
-    backdrop-filter: blur(1rem);
+    border: none;
 
-    &--back {
+    @media (width <= 768px) {
+      padding: 1rem;
+    }
+
+    & img {
+      display: block;
+    }
+
+    &.prev {
       left: 0;
-      transform: translateX(-50%);
+      transform: translateX(-30%);
       background-color: variables.$primary-color;
     }
 
-    &--frwd {
+    &.next {
       right: 0;
-      transform: translateX(50%);
+      transform: translateX(30%);
       background-color: variables.$primary-color;
     }
 
     &--disabled {
       opacity: 0.3;
       cursor: auto;
-    }
-  }
-}
-
-@media (max-width: 700px) {
-  .slider {
-    &__card-item {
-      flex: 0 0 100%;
     }
   }
 }

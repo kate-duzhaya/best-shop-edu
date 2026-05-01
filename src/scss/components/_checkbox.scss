@@ -1,0 +1,64 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.checkbox-container {
+  @include mixins.flex(flex-start, center);
+
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+
+  & input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .checkmark {
+      background-color: variables.$primary-color;
+      border-color: variables.$primary-color;
+
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  & .checkmark::after {
+    left: 4px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid variables.$primary-white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  &:hover input {
+    & ~ .checkmark {
+      background-color: variables.$field-border-grey;
+    }
+
+    &:checked ~ .checkmark {
+      background-color: variables.$primary-color-hover;
+    }
+  }
+}
+
+.checkmark {
+  flex: 1 0 1.6rem;
+  display: inline-block;
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: variables.$primary-white;
+  border: 2px solid variables.$tertiary-grey;
+  position: relative;
+  margin-right: 1rem;
+  transition: all 0.2s ease-in-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
