@@ -3,7 +3,7 @@ import injectHTML from "vite-plugin-html-inject";
 import { resolve } from "path";
 
 export default defineConfig({
-  base: "/",
+  base: "/best-shop-edu/",
   root: "src",
   publicDir: resolve(__dirname, "public"),
   build: {
