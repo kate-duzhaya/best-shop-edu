@@ -1,5 +1,6 @@
 import { ProductService } from "./ProductService";
 import { ProductView } from "./components/ProductView";
+import { BASE_URL } from "./config";
 
 const productService = new ProductService();
 
@@ -46,7 +47,7 @@ export const initProductPage = () => {
           colorField.value,
           "size",
         );
-        window.location.href = `/html/product.html?id=${newProductId}`;
+        window.location.href = `${BASE_URL}html/product.html?id=${newProductId}`;
       });
 
       colorField.addEventListener("change", () => {
@@ -56,7 +57,7 @@ export const initProductPage = () => {
           colorField.value,
           "color",
         );
-        window.location.href = `/html/product.html?id=${newProductId}`;
+        window.location.href = `${BASE_URL}html/product.html?id=${newProductId}`;
       });
     });
   } catch (err: unknown) {

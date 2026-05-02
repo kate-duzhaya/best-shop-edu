@@ -7,3 +7,4 @@ export const SHIPPING_PRICE: number = 30;
 
 export const TEST_EMAIL: string = "test1234@gmail.com";
 export const TEST_PASSWORD: string = "test1234";
+export const BASE_URL: string = import.meta.env.BASE_URL;

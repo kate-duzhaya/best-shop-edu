@@ -3,6 +3,7 @@ import { renderProducts } from "./ProductCard";
 import { InputValidation } from "./InputValidation";
 import { Modal } from "./Modal";
 import { shoppingCart } from "../ShoppingCart";
+import { BASE_URL } from "../config";
 
 const inputValidation = new InputValidation();
 
@@ -56,7 +57,7 @@ export class ProductView {
     if (priceElement) priceElement.textContent = `$${this._product.price}`;
 
     if (mainImgElement) {
-      mainImgElement.src = `${this._product.imageUrl}`;
+      mainImgElement.src = `${BASE_URL}${this._product.imageUrl}`;
       mainImgElement.alt = `${this._product.name} in ${this._product.color}`;
     }
 
@@ -230,7 +231,7 @@ export class ProductView {
 
       if (!isReviewValid || !isNameValid || !isEmailValid) return;
 
-      new Modal("/html/modalSuccessMsg.html").open();
+      new Modal(`${BASE_URL}html/modalSuccessMsg.html`).open();
     });
   }
 

@@ -1,6 +1,6 @@
 import { ProductToCart } from "../product";
 import { shoppingCart } from "../ShoppingCart";
-import { SHIPPING_PRICE } from "../config";
+import { BASE_URL, SHIPPING_PRICE } from "../config";
 
 const renderCartProduct = (product: ProductToCart): HTMLDivElement => {
   const cartRow: HTMLDivElement = document.createElement("div");
@@ -9,7 +9,8 @@ const renderCartProduct = (product: ProductToCart): HTMLDivElement => {
   const imgCell: HTMLDivElement = document.createElement("div");
   const img: HTMLImageElement = document.createElement("img");
   img.classList.add("cart__img");
-  img.src = product.image;
+  const trimmedBase = BASE_URL.slice(0, BASE_URL.length - 1);
+  img.src = `${trimmedBase}${product.image}`;
   img.alt = product.name;
   imgCell.append(img);
 
@@ -66,7 +67,7 @@ const renderCartProduct = (product: ProductToCart): HTMLDivElement => {
   const btnCell: HTMLDivElement = document.createElement("div");
   const removeBtn: HTMLButtonElement = document.createElement("button");
   const btnImg: HTMLImageElement = document.createElement("img");
-  btnImg.src = "/img/icons/trash-can.svg";
+  btnImg.src = `${BASE_URL}img/icons/trash-can.svg`;
   btnImg.alt = "Remove item";
   removeBtn.classList.add("btn", "remove-item");
   removeBtn.type = "button";

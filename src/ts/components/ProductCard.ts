@@ -1,3 +1,4 @@
+import { BASE_URL } from "../config";
 import { Product, SectionType, ProductToCart } from "../product";
 import { shoppingCart } from "../ShoppingCart";
 
@@ -7,10 +8,11 @@ const renderProductCardImage = (
   productId: string,
 ): HTMLAnchorElement => {
   const productLink: HTMLAnchorElement = document.createElement("a");
-  productLink.href = `/html/product.html?id=${productId}`;
+  productLink.href = `${BASE_URL}html/product.html?id=${productId}`;
   productLink.classList.add("product-card__image-box");
   const img: HTMLImageElement = document.createElement("img");
-  img.src = imgURL;
+  const trimmedBase = BASE_URL.slice(0, BASE_URL.length - 1);
+  img.src = `${trimmedBase}${imgURL}`;
   img.alt = productName;
   img.classList.add("product-card__image");
   productLink.append(img);
@@ -130,7 +132,7 @@ const renderProductCard = (
         productBtn.classList.remove("btn");
         break;
       case "viewProductBtn":
-        window.location.href = `/html/product.html?id=${product.id}`;
+        window.location.href = `${BASE_URL}html/product.html?id=${product.id}`;
         break;
       default:
         return;
@@ -142,7 +144,7 @@ const renderProductCard = (
 
 const renderSetCard = (set: Product): HTMLAnchorElement => {
   const setCard: HTMLAnchorElement = document.createElement("a");
-  setCard.href = `/html/product.html?id=${set.id}`;
+  setCard.href = `${BASE_URL}html/product.html?id=${set.id}`;
   setCard.classList.add("catalog-grid__set");
 
   const imgWrapper: HTMLDivElement = document.createElement("div");
@@ -150,7 +152,7 @@ const renderSetCard = (set: Product): HTMLAnchorElement => {
 
   const img: HTMLImageElement = document.createElement("img");
   img.classList.add("catalog-grid__set-image");
-  img.src = `/img/suitcases/${set.id}.jpg`;
+  img.src = `${BASE_URL}img/suitcases/${set.id}.jpg`;
   img.alt = set.name;
   imgWrapper.append(img);
 

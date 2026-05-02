@@ -1,5 +1,6 @@
 import { Modal } from "./components/Modal";
 import { InputValidation } from "./components/InputValidation";
+import { BASE_URL } from "./config";
 
 const validateContactForm = (): void => {
   const form = document.querySelector(".contact-form") as HTMLFormElement;
@@ -53,7 +54,7 @@ const validateContactForm = (): void => {
       return;
     }
 
-    new Modal("../html/modalSuccessMsg.html").open();
+    new Modal(`${BASE_URL}html/modalSuccessMsg.html`).open();
 
     for (const field of [nameField, emailField, topicField, messageField]) {
       field.value = "";

@@ -1,6 +1,7 @@
 import { renderCart, renderTotals } from "./components/CartView";
 import { shoppingCart } from "./ShoppingCart";
 import { Modal } from "./components/Modal";
+import { BASE_URL } from "./config";
 
 export const initCartPage = () => {
   shoppingCart.subscribe(renderCart);
@@ -20,6 +21,6 @@ export const initCartPage = () => {
   checkoutBtn.addEventListener("click", () => {
     shoppingCart.clear();
     window.scrollTo(0, 0);
-    new Modal("/html/modalPurchase.html").open();
+    new Modal(`${BASE_URL}html/modalPurchase.html`).open();
   });
 };

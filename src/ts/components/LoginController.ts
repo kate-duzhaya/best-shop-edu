@@ -1,4 +1,4 @@
-import { TEST_EMAIL, TEST_PASSWORD } from "../config";
+import { BASE_URL, TEST_EMAIL, TEST_PASSWORD } from "../config";
 import { InputValidation } from "./InputValidation";
 import { Modal } from "./Modal";
 
@@ -11,7 +11,7 @@ export class LoginController {
   private _authErrorDiv: HTMLDivElement | null = null;
 
   constructor() {
-    this._loginModal = new Modal("/html/modalLogin.html");
+    this._loginModal = new Modal(`${BASE_URL}html/modalLogin.html`);
   }
 
   render() {
@@ -71,7 +71,8 @@ export class LoginController {
             this._passField?.getAttribute("type") === "password"
               ? "/img/icons/eye.svg"
               : "/img/icons/eye-filled.svg";
-          revealPass.src = imgSrc;
+          const trimmedBase = BASE_URL.slice(0, BASE_URL.length - 1);
+          revealPass.src = `${trimmedBase}${imgSrc}`;
         });
       }
     }
