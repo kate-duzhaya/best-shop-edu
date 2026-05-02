@@ -51,6 +51,7 @@ export const state: State = {
   },
   setSorting(sortOption: SortOptions) {
     this.sorting = sortOption;
+    this.currentPage = 1;
     this.listeners.forEach((listener) => listener());
   },
   setSearchQuery(query: string) {
