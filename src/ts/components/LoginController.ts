@@ -69,8 +69,8 @@ export class LoginController {
           this._passField?.setAttribute("type", type);
           const imgSrc =
             this._passField?.getAttribute("type") === "password"
-              ? "../../assets/img/icons/eye.svg"
-              : "../../assets/img/icons/eye-filled.svg";
+              ? "/img/icons/eye.svg"
+              : "/img/icons/eye-filled.svg";
           revealPass.src = imgSrc;
         });
       }

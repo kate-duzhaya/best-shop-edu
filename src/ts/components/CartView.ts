@@ -66,7 +66,7 @@ const renderCartProduct = (product: ProductToCart): HTMLDivElement => {
   const btnCell: HTMLDivElement = document.createElement("div");
   const removeBtn: HTMLButtonElement = document.createElement("button");
   const btnImg: HTMLImageElement = document.createElement("img");
-  btnImg.src = "../../assets/img/icons/trash-can.svg";
+  btnImg.src = "/img/icons/trash-can.svg";
   btnImg.alt = "Remove item";
   removeBtn.classList.add("btn", "remove-item");
   removeBtn.type = "button";

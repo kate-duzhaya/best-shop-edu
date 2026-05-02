@@ -5,7 +5,7 @@
   &__container {
     @include mixins.flex(flex-start, stretch, 17rem, row);
 
-    background-image: url("../../assets/img/decorative/banner-bg.jpg");
+    background-image: url("/img/decorative/banner-bg.jpg");
     background-size: cover;
     background-position: top;
     padding: 7.4rem 10.4rem;

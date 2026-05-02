@@ -70,19 +70,19 @@
     }
 
     &--phone::before {
-      background: url("../../assets/img/icons/phone.svg") no-repeat center;
+      background: url("/img/icons/phone.svg") no-repeat center;
     }
 
     &--email::before {
-      background: url("../../assets/img/icons/email.svg") no-repeat center;
+      background: url("/img/icons/email.svg") no-repeat center;
     }
 
     &--opening-hours::before {
-      background: url("../../assets/img/icons/clock.svg") no-repeat center;
+      background: url("/img/icons/clock.svg") no-repeat center;
     }
 
     &--address::before {
-      background: url("../../assets/img/icons/map-pin.svg") no-repeat center;
+      background: url("/img/icons/map-pin.svg") no-repeat center;
     }
   }
 

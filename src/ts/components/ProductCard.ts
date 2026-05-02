@@ -150,7 +150,7 @@ const renderSetCard = (set: Product): HTMLAnchorElement => {
 
   const img: HTMLImageElement = document.createElement("img");
   img.classList.add("catalog-grid__set-image");
-  img.src = `../assets/img/suitcases/${set.id}.jpg`;
+  img.src = `/img/suitcases/${set.id}.jpg`;
   img.alt = set.name;
   imgWrapper.append(img);
 

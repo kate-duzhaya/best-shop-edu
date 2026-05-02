@@ -3,7 +3,7 @@
 
 .benefits {
   background:
-    url("../../assets/img/decorative/benefits-lines-bg.png"),
+    url("/img/decorative/benefits-lines-bg.png"),
     variables.$primary-grey no-repeat;
   background-size: cover;
   background-position: top;
@@ -42,27 +42,19 @@
     }
 
     &--1::before {
-      @include mixins.add-image-pseudo-element(
-        "../../assets/img/decorative/benefit1.png"
-      );
+      @include mixins.add-image-pseudo-element("/img/decorative/benefit1.png");
     }
 
     &--2::before {
-      @include mixins.add-image-pseudo-element(
-        "../../assets/img/decorative/benefit2.png"
-      );
+      @include mixins.add-image-pseudo-element("/img/decorative/benefit2.png");
     }
 
     &--3::before {
-      @include mixins.add-image-pseudo-element(
-        "../../assets/img/decorative/benefit3.png"
-      );
+      @include mixins.add-image-pseudo-element("/img/decorative/benefit3.png");
     }
 
     &--4::before {
-      @include mixins.add-image-pseudo-element(
-        "../../assets/img/decorative/benefit4.png"
-      );
+      @include mixins.add-image-pseudo-element("/img/decorative/benefit4.png");
     }
   }
 }
